@@ -8,72 +8,53 @@
 </head>
 
 <body>
-    <section class="vh-100 bg-image"
-        style="background-image: url('../../../../assets/registerBg.png');">
+    <section class="vh-100 bg-image" style="background-image: url('../../../../assets/registerBack.png');">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                         <div class="card" style="border-radius: 15px;">
                             <div class="card-body p-5">
-                                <h2 class="text-uppercase text-center mb-5">Create your account</h2>
-
-                                <form>
-
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example1cg">Your Name</label>
-                                        <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="companyName" placeholder="Username" reuired="" />
-                                        
+                                <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Register New Insurance Company</h2>
+                                 <form>
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="name">Your Company Name</label>
+                                        <input type="text" id="name" class="form-control " name="companyName"
+                                            placeholder="Username" required />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example3cg"> Email</label>
-                                        <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="companyEmail" placeholder=" Ex:abcd@gmail.com" reuired=""/>
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="form3Example4cg">Enter Password</label>
+                                        <input type="password" id="password" class="form-control "
+                                            name="companyPassword" placeholder=" Enter your Password" required />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cg">Password</label>
-                                        <input type="password" id="form3Example4cg"
-                                            class="form-control form-control-lg" name="companyPassword" placeholder=" Strong Password" reuired=""/>
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="email"> Company Email</label>
+                                        <input type="email" id="email" class="form-control " name="companyEmail"
+                                            placeholder=" Ex:abcd@gmail.com" required />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                                        <input type="password" id="form3Example4cdg"
-                                            class="form-control form-control-lg" name="companyPasswordRepeat" placeholder=" Strong Password" reuired="" />
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="contact">Company Contact</label>
+                                        <input type="tel" id="contact" class="form-control" name="companyContact"
+                                            placeholder=" +91-XXXXXXXXXX" required />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cdg">Contact</label>
-                                        <input type="companyContact" id="form3Example4cdg"
-                                            class="form-control form-control-lg" name="companyContact" placeholder=" +91-XXXXXXXXXX" reuired=""/>
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="year">Established Year</label>
+                                        <input type="date" id="year" class="form-control " name="companyStartYears"
+                                            placeholder="Enter year" required />
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cdg">Established Year</label>
-                                        <input type="companyStartYears" id="form3Example4cdg"
-                                            class="form-control form-control-lg" name="companyStartYears" placeholder="Digits Format Only" reuired="" />
-                                    </div>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary col-lg-12">Register</button>
+                                    <br>
 
-                                    <div class="form-check d-flex justify-content-center mb-5">
-                                        <input class="form-check-input me-2" type="checkbox" value=""
-                                            id="form2Example3cg" />
-                                        <label class="form-check-label" for="form2Example3g">
-                                            I agree all statements in <a href="#!" class="text-body"><u>Terms of
-                                                    service</u></a>
-                                        </label>
-                                    </div>
-
-                                    <div class="d-flex justify-content-center">
-                                        <button type="button"
-                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                                    </div>
-
-                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                                            class="fw-bold text-body"><u>Login here</u></a></p>
+                                    <p class="text-center text-muted mb-0">Have already an account? <a href="#!"
+                                            class="fw-bold text-body"><u routerLink="/login">Login here</u></a></p>
 
                                 </form>
-
                             </div>
                         </div>
                     </div>
