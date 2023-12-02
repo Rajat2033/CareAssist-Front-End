@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body >
+    <div class="container col-md-6 " >
+        <h1 [ngStyle]="{color:'red'} " style="font-size: 45px;">Healthcare Provider Registration</h1>
+
+        <br><br>
+        <form class="form-group" >
+            <label class="label-control" for="name">Enter Name</label>
+            <input type="text" class="form-control" id="name" formControlName="providerName"
+                placeholder="Enter Your Full Name">
+
+            <label class="label-control" for="password">Enter password</label>
+            <input type="password" class="form-control" id="password" formControlName="providerPassword"
+                placeholder="Enter Your Password">
+
+            <label class="label-control" for="email">Enter Email</label>
+            <input type="email" class="form-control" id="email" formControlName="providerEmail"
+                placeholder="Enter Your Email">
+
+            <label class="control-label">Enter Gender</label>
+            <select type="dropdown" class="form-control" formControlName="providerGender">
+                <option value="" disabled selected>select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Not Say"> Prefer Not to say</option>
+            </select>
+
+            <label class="label-control" for="speciality">Enter your Speciality</label>
+            <input type="text" class="form-control" id="speciality" formControlName="providerSpeciality"
+                placeholder="Enter speciality">
+
+            <label class="label-control " for="designation">Enter your Designation</label>
+            <input type="text" class="form-control" id="designation" formControlName="providerDesignation" placeholder="Enter Designation">
+
+            <label class="label-control" for="exp">Enter your Experience</label>
+            <select type="dropdown" class="form-control" formControlName="providerExperience">
+                <option value="" disabled selected>select</option>
+                <option value="Fresher">0</option>
+                <option value="1-2">1-2</option>
+                <option value="2-4">2-4</option>
+                <option value="4-7">4-7</option>
+                <option value="7-12"><7</option>
+            </select>
+            <label class="label-control" for="qualification">Enter your qualification</label>
+            <input type="text" class="form-control" id="qualification" formControlName="providerQualification" placeholder="Enter Qualification">
+
+            <br>
+            <button type="submit" class="btn btn-success col-lg-12">Register</button>
+            <br>
+            <br>
+            <br>
+
+           <h6 class="col-md-4">Already have an account ????</h6>
+        </form>
+    </div>
+
+</body>
+
+</html>
