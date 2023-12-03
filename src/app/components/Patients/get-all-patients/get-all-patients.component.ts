@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Patients } from '../../Model/Patients';
+import { PatientsService } from 'src/app/services/PatientsService/patients.service';
 
 @Component({
   selector: 'app-get-all-patients',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./get-all-patients.component.css']
 })
 export class GetAllPatientsComponent {
+
+  patientList: Patients[] = [];
+
+  constructor(private patientService:PatientsService){}
+
+  getAllPatientsData(){
+    this.patientService.getAllPatients().subscribe(data=>{
+      this.patientList = data;
+    })
+  }
 
 }
