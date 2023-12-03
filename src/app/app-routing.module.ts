@@ -19,6 +19,7 @@ import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get
 import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/update-insurance-claim/update-insurance-claim.component';
 import { LoginComponent } from './components/Login/login/login.component';
 import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/app', pathMatch: 'full' },
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'addclaim', component: SubmitInsuranceClaimComponent },
   { path: 'getallclaims', component: GetAllInsuranceClaimsComponent },
   { path: 'updateclaim', component: UpdateInsuranceClaimComponent },
+  { path: 'admin/dashboard', component: AdmindashboardComponent},
   {path:'forgetpassword',component:ForgotPasswordComponent}
 
 

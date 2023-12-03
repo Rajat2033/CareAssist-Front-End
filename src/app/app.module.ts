@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterPatientsComponent } from './components/Patients/register-patients/register-patients.component';
@@ -19,7 +19,7 @@ import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/upda
 import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get-all-insurance-claims/get-all-insurance-claims.component';
 import { GenerateInvoiceComponent } from './components/InvoiceDetails/generate-invoice/generate-invoice.component';
 import { GetAllInvoicesComponent } from './components/InvoiceDetails/get-all-invoices/get-all-invoices.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { LoginComponent } from './components/Login/login/login.component';
@@ -52,6 +52,8 @@ import { ForgotPasswordComponent } from './components/Login/forgot-password/forg
 
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule

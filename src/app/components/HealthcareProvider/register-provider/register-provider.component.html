@@ -17,7 +17,7 @@
                                 <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Registration
                                     Form Healthcare Provider</h2>
 
-                                <form>
+                                <form [formGroup]="registerProviderFormsGroup" (ngSubmit)="registerProvider()">
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="name">Enter Name</label>
                                         <input type="text" id="name" class="form-control "
