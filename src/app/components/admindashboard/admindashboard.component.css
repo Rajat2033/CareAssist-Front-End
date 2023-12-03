@@ -14,13 +14,13 @@
   
 :root{
     /* ===== Colors ===== */
-    --primary-color: #0E4BF1;
+    --primary-color: #17181b;
     --panel-color: #FFF;
     --text-color: #000;
     --black-light-color: #707070;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
-    --box1-color: #4DA3FF;
+    --box1-color: black;
     --box2-color: #FFE6AC;
     --box3-color: #E7D1FC;
     --title-icon-color: #fff;
@@ -61,7 +61,7 @@ body.dark{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0b3cc1;
+    background: black;
 }
 
 body.dark::-webkit-scrollbar-thumb:hover,
@@ -139,7 +139,7 @@ nav .menu-items{
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: black;
 }
 body.dark li a:hover:before{
     background-color: var(--text-color);
@@ -151,7 +151,7 @@ body.dark li a:hover:before{
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black-light-color);
+    color: black;
 }
 .menu-items li a .link-name{
     font-size: 18px;

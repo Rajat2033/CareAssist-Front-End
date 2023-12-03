@@ -35,17 +35,17 @@ export class LoginComponent  {
 
     let response =  this.jwtService.getAdminGeneratedToken(authRequest);
  
-       response.subscribe( (genToken)=> {  this.token = genToken ;console.log(genToken);  this.accessApi(this.token) });
+       response.subscribe( (genToken)=> {  this.token = genToken ;console.log(genToken);  this.getAdmindash(this.token) });
  
        
  
    }
  
-   public accessApi(token:any){
+   public getAdmindash(token:any){
  
-   let response =    this.jwtService.adminAuthorizationTest(token);
+   let responseAdmin =    this.jwtService.adminAuthorizationTest(token);
  
-         response.subscribe( responseData => {this.formResponse = responseData; console.log(responseData) });
+        //  response.subscribe( responseData => {this.formResponse = responseData; console.log(responseData) });
  
    }
  

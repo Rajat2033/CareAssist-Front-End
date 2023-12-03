@@ -23,8 +23,8 @@ export class JwtClientService {
 
 
    console.log(headers);
-   this.router.navigate(['/admin/dashboard'])
-  return this.http.get(this.adminUrl+"getallinsuranceplans",{headers,responseType:'text' as 'json'});
+    this.router.navigate(['/admin/dashboard']);
+  // return this.http.get(this.adminUrl+"getallinsuranceplans",{headers,responseType:'text' as 'json'});
  
 
 }
