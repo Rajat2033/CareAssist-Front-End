@@ -27,7 +27,7 @@
             <ul class="nav-links">
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallpatients" (click)="getAllPatientsData()">Patients</span>
+                        <span class="link-name" routerLink="/getallpatients" >Patients</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
@@ -84,14 +84,15 @@
                     <span class="text"> Admin Dashboard</span>
                 </div>
 
+                <button (click)="getAllPatientsData()">Display All The patients</button>
                 <div class="activity">
                     <div class="title">
                         <i class="uil uil-clock-three"></i>
                         <span class="text">All the Patients List</span>
                     </div>
 
-                    <div class="activity-data">
-                        <div class="data names">
+                    <!-- <div class="activity-data">
+                        <div class="data names"> -->
                             <table class="table table-primary">
                                 <tr>
                                     <th>Sr No.</th>
@@ -133,8 +134,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            <!-- </div>
+        </div> -->
 
 
     </section>

@@ -24,6 +24,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { LoginComponent } from './components/Login/login/login.component';
 import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
+import { DashboardComponent } from './components/InsuranceCompany/CompanyDashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ForgotPasswordComponent } from './components/Login/forgot-password/forg
     AdmindashboardComponent,
     LoginComponent,
 
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+      DashboardComponent
 
   ],
   imports: [

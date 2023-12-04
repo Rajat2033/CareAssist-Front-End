@@ -21,10 +21,10 @@
                 <br><br>
                 <h3 class="pb-3">Login Form</h3>
                 <div class="form-style">
-                    <form  #formData="ngForm" (ngSubmit)="readFormData(formData)">
+                    <form  #formData="ngForm" (ngSubmit)="login(formData)">
                         <div class="form-group pb-3">
                             <label class="label-control" for="Username">Enter Your Name</label>
-                            <input type="name" placeholder="Enter your full name" class="form-control" id="Username" name="username"  #username="ngModel" ngModel
+                            <input type="name" placeholder="Enter your full name" class="form-control" id="Username" name="name"  #username="ngModel" ngModel
                                 aria-describedby="nameHelp" required>
                                 <span style="color:red"  *ngIf="username.touched && username.invalid" >UserName is required</span>
                         </div>
