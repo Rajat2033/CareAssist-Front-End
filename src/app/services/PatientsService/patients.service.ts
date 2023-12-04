@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
-import { Patients } from 'src/app/components/Model/Patients';
+import { Patients } from 'src/app/Model/Patients';
 import { JwtClientService } from '../Jwt/jwt-client.service';
 
 @Injectable({

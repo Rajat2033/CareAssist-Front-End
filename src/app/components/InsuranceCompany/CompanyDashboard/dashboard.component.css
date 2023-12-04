@@ -83,3 +83,15 @@ header .logo {
 {
     font-size: 19px;
 }
+
+
+
+.copyright {
+    height: 50px;
+    background-color: #87CEEB;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
