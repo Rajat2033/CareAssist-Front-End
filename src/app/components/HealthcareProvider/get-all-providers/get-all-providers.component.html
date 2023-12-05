@@ -84,64 +84,39 @@
                     <span class="text"> Admin Dashboard</span>
                 </div>
 
+                <button class="btn-success" (click)="getAllProvidersData()">Display All The Healthcare Providers</button>
                 <div class="activity">
                     <div class="title">
                         <i class="uil uil-clock-three"></i>
                         <span class="text">All the Providers List</span>
                     </div>
 
-                    <div class="activity-data">
-                        <div class="data names">
-                            <span class="data-title">Name</span>
-                            <span class="data-list">Prem Shahi</span>
-                            <span class="data-list">Deepa Chand</span>
-                            <span class="data-list">Manisha Chand</span>
-                            <span class="data-list">Pratima Shahi</span>
-                            <span class="data-list">Man Shahi</span>
-                            <span class="data-list">Ganesh Chand</span>
-                            <span class="data-list">Bikash Chand</span>
-                        </div>
-                        <div class="data email">
-                            <span class="data-title">Email</span>
-                            <span class="data-list">premshahi@gmail.com</span>
-                            <span class="data-list">deepachand@gmail.com</span>
-                            <span class="data-list">prakashhai@gmail.com</span>
-                            <span class="data-list">manishachand@gmail.com</span>
-                            <span class="data-list">pratimashhai@gmail.com</span>
-                            <span class="data-list">manshahi@gmail.com</span>
-                            <span class="data-list">ganeshchand@gmail.com</span>
-                        </div>
-                        <div class="data joined">
-                            <span class="data-title">Joined</span>
-                            <span class="data-list">2022-02-12</span>
-                            <span class="data-list">2022-02-12</span>
-                            <span class="data-list">2022-02-13</span>
-                            <span class="data-list">2022-02-13</span>
-                            <span class="data-list">2022-02-14</span>
-                            <span class="data-list">2022-02-14</span>
-                            <span class="data-list">2022-02-15</span>
-                        </div>
-                        <div class="data type">
-                            <span class="data-title">Type</span>
-                            <span class="data-list">New</span>
-                            <span class="data-list">Member</span>
-                            <span class="data-list">Member</span>
-                            <span class="data-list">New</span>
-                            <span class="data-list">Member</span>
-                            <span class="data-list">New</span>
-                            <span class="data-list">Member</span>
-                        </div>
-                        <div class="data status">
-                            <span class="data-title">Status</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                            <span class="data-list">Liked</span>
-                        </div>
-                    </div>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Sr No.</td>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Email Id</td>
+                            <td>Gender</td>
+                            <td>Speciality</td>
+                            <td>Designation</td>
+                            <td>Experience</td>
+                            <td>Qualification</td>
+                            <td>Action</td>
+                        </tr>
+
+                        <tr *ngFor="let providers of healthcareProvidersList,index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{providers.providerId}}</td>
+                        <td>{{providers.providerName}}</td>
+                        <td>{{providers.providerEmail}}</td>
+                        <td>{{providers.providerGender}}</td>
+                        <td>{{providers.providerSpeciality}}</td>
+                        <td>{{providers.providerDesignation}}</td>
+                        <td>{{providers.providerExperience}}</td>
+                        <td>{{providers.providerQualification}}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

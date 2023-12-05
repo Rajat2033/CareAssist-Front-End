@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InsurancePlans } from 'src/app/Model/InsurancePlans';
+import { InsurancePlansService } from 'src/app/services/InsurancePlansService/insurance-plans.service';
 
 @Component({
   selector: 'app-get-all-insurance-plans',
@@ -7,4 +9,15 @@ import { Component } from '@angular/core';
 })
 export class GetAllInsurancePlansComponent {
 
+  insurancePlansList:InsurancePlans[] = [];
+
+  constructor(private plansService:InsurancePlansService){}
+
+  getAllPlansDetails()
+  {
+    this.plansService.getAllInsurancePlans().subscribe(data=>{
+      this.insurancePlansList = data;
+      
+    })
+  }
 }

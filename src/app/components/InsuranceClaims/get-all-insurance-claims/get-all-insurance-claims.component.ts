@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InsuranceClaims } from 'src/app/Model/InsuranceClaims';
+import { InsuranceClaimsService } from 'src/app/services/InsuranceClaimsService/insurance-claims.service';
 
 @Component({
   selector: 'app-get-all-insurance-claims',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class GetAllInsuranceClaimsComponent {
 
+  claimsList: InsuranceClaims[] = [];
+
+  constructor(private claimService: InsuranceClaimsService) { }
+  getAllClaims() {
+    this.claimService.getAllInsuranceClaims().subscribe(data => {
+      this.claimsList = data;
+    }
+    )
+  }
 }

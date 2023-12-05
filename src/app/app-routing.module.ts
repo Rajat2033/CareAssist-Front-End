@@ -17,14 +17,14 @@ import { GetAllProvidersComponent } from './components/HealthcareProvider/get-al
 import { SubmitInsuranceClaimComponent } from './components/InsuranceClaims/submit-insurance-claim/submit-insurance-claim.component';
 import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get-all-insurance-claims/get-all-insurance-claims.component';
 import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/update-insurance-claim/update-insurance-claim.component';
-import { LoginComponent } from './components/Login/login/login.component';
 import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
-import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { AdmindashboardComponent } from './components/Admin/admindashboard.component';
+import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: '/app', pathMatch: 'full' },
   { path: '', component: HomepageComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginAdminComponent },
   { path: 'registerpatient', component: RegisterPatientsComponent },
   { path: 'updatepatients/:id', component: UpdatePatientsComponent },
   { path: 'getallpatients', component: GetAllPatientsComponent },

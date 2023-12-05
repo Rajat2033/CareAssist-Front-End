@@ -2,7 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
 import { Patients } from 'src/app/Model/Patients';
-import { JwtClientService } from '../Jwt/jwt-client.service';
+import { JwtPatientService } from './jwt-patient.service';
+import { JwtAdminService } from '../AdminService/jwt-admin.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +14,11 @@ export class PatientsService {
 
   adminURL: string = 'http://localhost:8080/api/v1/patients';
 
-  constructor(private http: HttpClient,private jwtService:JwtClientService) { }
+  constructor(private http: HttpClient,private jwtPatient:JwtPatientService,private jwtAdmin:JwtAdminService) { }
 
 
   getAllPatients(): Observable<Patients[]> {
-    const token = this.jwtService.getToken();
+    const token = this.jwtAdmin.getToken();
 
     console.log(token);
     if (token) {

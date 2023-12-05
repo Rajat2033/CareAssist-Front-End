@@ -55,9 +55,9 @@
 
             <hr>
             <ul class="logout-mode">
-                <li><a>
+                <li><a >
                         <i class="uil uil-signout"></i>
-                        <span class="link-name" routerLink="/">Logout</span>
+                        <span class="link-name" >Logout</span>
                     </a></li>
 
 
@@ -84,7 +84,7 @@
                     <span class="text"> Admin Dashboard</span>
                 </div>
 
-                <button (click)="getAllPatientsData()">Display All The patients</button>
+                <button class="btn-success" (click)="getAllPatientsData()">Display All The patients</button>
                 <div class="activity">
                     <div class="title">
                         <i class="uil uil-clock-three"></i>
@@ -93,7 +93,7 @@
 
                     <!-- <div class="activity-data">
                         <div class="data names"> -->
-                            <table class="table table-primary">
+                            <table class="table table-stripped">
                                 <tr>
                                     <th>Sr No.</th>
                                     <th>Id</th>
@@ -105,7 +105,8 @@
                                     <th>Address</th>
                                     <th>Disease</th>
                                 </tr>
-                                <tr *ngFor="let patient of patientList">
+                                <tr *ngFor="let patient of patientList,index as i">
+                                    <td>{{i+1}}</td>
                                 <td>
                                     {{patient.patientId}}
                                 </td>

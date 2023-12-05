@@ -27,7 +27,7 @@
             <ul class="nav-links">
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallpatients">Patients</span>
+                        <span class="link-name" routerLink="/getallpatients" >Patients</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
@@ -46,7 +46,7 @@
                         <span class="link-name" routerLink="/getallinvoices">Invoice Details</span>
                     </a></li>
 
-                <li><a>
+                    <li><a>
                         <i class="uil uil-chart"></i>
                         <span class="link-name" routerLink="/getallclaims">Claim History</span>
                     </a></li>
@@ -55,10 +55,9 @@
 
             <hr>
             <ul class="logout-mode">
-                <li><a>
+                <li><a (click)="logout()">
                         <i class="uil uil-signout"></i>
-                        <hr>
-                        <span class="link-name" routerLink="/">Logout</span>
+                        <span class="link-name">Logout</span>
                     </a></li>
 
 
@@ -76,9 +75,8 @@
                 <input type="text" placeholder="Search here...">
             </div>
 
-        </div>
 
-        
+        </div>
         <div class="dash-content">
             <div class="overview">
                 <div class="title">
@@ -86,39 +84,22 @@
                     <span class="text"> Admin Dashboard</span>
                 </div>
 
-                <button class="btn btn-success"(click)="getAllPlansDetails()">Insurance Plans</button>
                 <div class="activity">
                     <div class="title">
                         <i class="uil uil-clock-three"></i>
-                        <span class="text">All the Insurance Plans List</span>
+                        <span class="text">All the Providers List</span>
                     </div>
 
-                    <table class="table table-success">
-                        <tr>
-                            <td>Sr No.</td>
-                            <td>Plan Id</td>
-                            <td>Plan Name</td>
-                            <td>Plan Type</td>
-                            <td>Cover Amount</td>
-                            <td>Plan Emi</td>
-                            <td>Details</td>
-                        </tr>
-                        <tr *ngFor="let plan of insurancePlansList,index as i">
-                            <td>{{i+1}}</td>
-                            <td>{{plan.planId}}</td>
-                            <td>{{plan.planName}}</td>
-                            <td>{{plan.planType}}</td>
-                            <td>{{plan.planCoverAmount}}</td>
-                            <td>{{plan.planEmi}}</td>
-                            <td>{{plan.planDetails}}</td>
-                        </tr>
-                    </table>
+                    
                 </div>
             </div>
         </div>
 
 
     </section>
+    <footer class="copyright">
+        <p class="text"> CareAssist Medical @All rights reserved</p>
+    </footer>
 
 
 

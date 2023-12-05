@@ -21,10 +21,10 @@ import { GenerateInvoiceComponent } from './components/InvoiceDetails/generate-i
 import { GetAllInvoicesComponent } from './components/InvoiceDetails/get-all-invoices/get-all-invoices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
-import { LoginComponent } from './components/Login/login/login.component';
+import { AdmindashboardComponent } from './components/Admin/admindashboard.component';
 import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
 import { DashboardComponent } from './components/InsuranceCompany/CompanyDashboard/dashboard.component';
+import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +47,11 @@ import { DashboardComponent } from './components/InsuranceCompany/CompanyDashboa
     GetAllInvoicesComponent,
     HomepageComponent,
     AdmindashboardComponent,
-    LoginComponent,
+   
 
     ForgotPasswordComponent,
-      DashboardComponent
+      DashboardComponent,
+      LoginAdminComponent
 
   ],
   imports: [
