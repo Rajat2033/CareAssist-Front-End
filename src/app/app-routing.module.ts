@@ -27,24 +27,20 @@ const routes: Routes = [
   { path: 'login', component: LoginAdminComponent },
   { path: 'registerpatient', component: RegisterPatientsComponent },
   { path: 'updatepatients/:id', component: UpdatePatientsComponent },
-  { path: 'getallpatients', component: GetAllPatientsComponent },
+
   { path: 'registercompany', component: RegisterCompanyComponent },
   { path: 'companies/:id', component: UpdateCompanyComponent },
-  { path: 'getallcompanies', component: GetAllCompaniesComponent },
+
 
   { path: 'addinsuranceplans', component: AddInsurancePlanComponent },
-  { path: 'getallplans', component: GetAllInsurancePlansComponent },
   { path: 'generateinvoice', component: GenerateInvoiceComponent },
-  { path: 'getallinvoices', component: GetAllInvoicesComponent },
   { path: 'registerprovider', component: RegisterProviderComponent },
   { path: 'addprovider', component: RegisterProviderComponent },
   { path: 'updateprovider', component: UpdateProviderComponent },
-  { path: 'getallproviders', component: GetAllProvidersComponent },
   { path: 'addclaim', component: SubmitInsuranceClaimComponent },
-  { path: 'getallclaims', component: GetAllInsuranceClaimsComponent },
   { path: 'updateclaim', component: UpdateInsuranceClaimComponent },
-  { path: 'admin/dashboard', component: AdmindashboardComponent},
-  {path:'forgetpassword',component:ForgotPasswordComponent}
+  { path: 'admin/dashboard', component: AdmindashboardComponent, children: [{ path: 'getallcompanies', component: GetAllCompaniesComponent }, { path: 'getallpatients', component: GetAllPatientsComponent }, { path: 'getallclaims', component: GetAllInsuranceClaimsComponent }, { path: 'getallproviders', component: GetAllProvidersComponent }, { path: 'getallplans', component: GetAllInsurancePlansComponent }, { path: 'getallinvoices', component: GetAllInvoicesComponent }] },
+  { path: 'forgetpassword', component: ForgotPasswordComponent }
 
 
 ];

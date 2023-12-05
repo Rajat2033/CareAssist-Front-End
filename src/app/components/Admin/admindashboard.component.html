@@ -27,28 +27,28 @@
             <ul class="nav-links">
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallpatients" >Patients</span>
+                        <span class="link-name" routerLink="getallpatients">Patients</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallproviders">Healthcare Providers</span>
+                        <span class="link-name" routerLink="getallproviders">Healthcare Providers</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallcompanies">Insurance Companies</span>
+                        <span class="link-name" routerLink="getallcompanies">Insurance Companies</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallplans">Insurance Plans</span>
+                        <span class="link-name" routerLink="getallplans">Insurance Plans</span>
                     </a></li>
                 <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallinvoices">Invoice Details</span>
+                        <span class="link-name" routerLink="getallinvoices">Invoice Details</span>
                     </a></li>
 
-                    <li><a>
+                <li><a>
                         <i class="uil uil-chart"></i>
-                        <span class="link-name" routerLink="/getallclaims">Claim History</span>
+                        <span class="link-name" routerLink="getallclaims">Claim History</span>
                     </a></li>
 
             </ul>
@@ -84,21 +84,17 @@
                     <span class="text"> Admin Dashboard</span>
                 </div>
 
-                <div class="activity">
-                    <div class="title">
-                        <i class="uil uil-clock-three"></i>
-                        <span class="text">All the Providers List</span>
-                    </div>
 
-                    
-                </div>
+                <router-outlet></router-outlet>
+
+
             </div>
         </div>
 
 
     </section>
     <footer class="copyright">
-        <p class="text"> CareAssist Medical @All rights reserved</p>
+        <p class="text"> CareAssist Medical : All Rights Reserved </p>
     </footer>
 
 

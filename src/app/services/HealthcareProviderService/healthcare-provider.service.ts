@@ -9,10 +9,15 @@ import { JwtProviderService } from './jwt-provider.service';
 })
 export class HealthcareProviderService {
 
-  adminURL: string = 'http://localhost:8080/api/v1/provider';
+  providerURL: string = 'http://localhost:8080/api/v1/provider';
 
   constructor(private http: HttpClient,private jwtProvider:JwtProviderService) { }
 
+
+  registerHealthcareProvider(provider:HealthcareProvider)
+  {
+    return this.http.post(this.providerURL+"/add/provider",provider);
+  }
 
   getAllProviders(): Observable<HealthcareProvider[]> {
     const token = this.jwtProvider.getToken();
@@ -24,7 +29,7 @@ export class HealthcareProviderService {
 
      
       console.log(headers);
-      return this.http.get<HealthcareProvider[]>(this.adminURL + '/getall/provider', { headers});
+      return this.http.get<HealthcareProvider[]>(this.providerURL + '/getall/provider', { headers});
       }
       else{
         return new Observable<HealthcareProvider[]>;

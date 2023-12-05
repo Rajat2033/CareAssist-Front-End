@@ -12,6 +12,31 @@
     min-height: 30px !important;
   }
   
+  #zebra-h tr:nth-child(even) {
+    color: darkslategrey;
+    background-color: lightblue;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Add space between thead and tbody */
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+.copyright {
+    height: 50px;
+    background-color: #87CEEB;
+}
+
+.text {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 :root{
     /* ===== Colors ===== */
     --primary-color: #17181b;

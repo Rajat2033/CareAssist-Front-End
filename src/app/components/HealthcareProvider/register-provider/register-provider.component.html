@@ -17,24 +17,44 @@
                                 <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Registration
                                     Form Healthcare Provider</h2>
 
-                                <form [formGroup]="registerProviderFormsGroup" (ngSubmit)="registerProvider()">
+                                <form [formGroup]="registerProviderFormsGroup" (ngSubmit)="submitform()">
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="name">Enter Name</label>
                                         <input type="text" id="name" class="form-control "
-                                            placeholder="Enter Your Full Name" formControlName="providerName" />
+                                            placeholder="Enter Your Full Name" formControlName="providerName"
+                                            [ngClass]="{'is-invalid':submitted && f['providerName'].errors}">
+                                        <div *ngIf="submitted && f['providerName'].errors" class="invalid-feedback">
+                                            <div *ngIf=" f['providerName'].errors['required']">Full Name is mandatory
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="password">Enter Password</label>
                                         <input type="password" class="form-control " id="password"
-                                            formControlName="providerPassword" placeholder="Enter Your Password">
+                                            formControlName="providerPassword" placeholder="Enter Your Password"
+                                            [ngClass]="{'is-invalid':submitted && f['providerPassword'].errors}">
+                                        <div *ngIf="submitted && f['providerPassword'].errors" class="invalid-feedback">
+                                            <div *ngIf=" f['providerPassword'].errors['required']">Password is mandatory
+                                            </div>
+                                            <div *ngIf=" f['providerPassword'].errors['pattern']">Password must contain
+                                                at least one digit, one lowercase letter, one uppercase letter, one
+                                                special character, and be at least 8 characters long.</div>
+                                        </div>
                                     </div>
 
 
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="email">Enter Email Id</label>
                                         <input type="email" id="email" class="form-control " id="email"
-                                            formControlName="providerEmail" placeholder="Ex : xyz@gmail.com" />
+                                            formControlName="providerEmail" placeholder="Ex : xyz@gmail.com"
+                                            [ngClass]="{'is-invalid':submitted && f['providerEmail'].errors}">
+                                        <div *ngIf="submitted && f['providerEmail'].errors" class="invalid-feedback">
+                                            <div *ngIf=" f['providerEmail'].errors['required']">Password is mandatory
+                                            </div>
+                                            <div *ngIf=" f['providerEmail'].errors['email']">Invalid Email Format</div>
+                                        </div>
                                     </div>
 
                                     <label class="control-label">Enter Gender</label>
@@ -47,9 +67,16 @@
                                     </select>
 
 
+
                                     <label class="label-control" for="speciality">Enter your Speciality</label>
                                     <input type="text" class="form-control" id="speciality"
-                                        formControlName="providerSpeciality" placeholder="Enter speciality">
+                                        formControlName="providerSpeciality" placeholder="Enter speciality"
+                                        [ngClass]="{'is-invalid':submitted && f['providerSpeciality'].errors}">
+                                    <div *ngIf="submitted && f['providerSpeciality'].errors" class="invalid-feedback">
+                                        <div *ngIf=" f['providerSpeciality'].errors['required']">Give your speciality
+                                        </div>
+
+                                    </div>
 
                                     <label class="label-control " for="designation">Enter your Designation</label>
                                     <input type="text" class="form-control" id="designation"
@@ -64,12 +91,21 @@
                                         <option value="4-7">4-7</option>
                                         <option value="7-12"> 7-12 </option>
                                     </select>
-                                    <label class="label-control" for="qualification">Enter your qualification</label>
+                                    <label class="label-control" for="qualification">Enter your
+                                        qualification</label>
                                     <input type="text" class="form-control" id="qualification"
-                                        formControlName="providerQualification" placeholder="Ex : MBBS">
+                                        formControlName="providerQualification" placeholder="Ex : MBBS"
+                                        [ngClass]="{'is-invalid':submitted && f['providerQualification'].errors}">
+                                    <div *ngIf="submitted && f['providerQualification'].errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf=" f['providerQualification'].errors['required']">Enter Qualifictaion
+                                            Properly</div>
+
+                                    </div>
 
                                     <br>
-                                    <button type="submit" class="btn btn-primary col-lg-12">Register</button>
+                                    <button type="submit" class="btn btn-primary col-lg-12"
+                                       >Register</button>
                                     <br>
 
                                     <p class="text-center text-muted mb-0">Have already an account? <a href="#!"
