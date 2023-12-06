@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Patients } from '../../../Model/Patients';
+import { Patients } from '../../../model/Patients';
 import { PatientsService } from 'src/app/services/PatientsService/patients.service';
 import { JwtAdminService } from 'src/app/services/AdminService/jwt-admin.service';
 import { Router } from '@angular/router';
@@ -20,10 +20,15 @@ export class GetAllPatientsComponent {
       this.patientList = data;
     })
   }
-  logoutAdmin() {
+
+  deletePatients(patientId:number)
+  {
+    this.patientService.deletePatientById(patientId).subscribe(data=>{
+      this.getAllPatientsData;
     
-    this.jwtAdminService.clearToken();
-    this.router.navigate(['/login']);
+     
+    })
   }
+  
 
 }

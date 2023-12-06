@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { InvoiceDetails } from 'src/app/Model/InvoiceDetails';
+import { InvoiceDetails } from 'src/app/model/InvoiceDetails';
 import { JwtAdminService } from '../AdminService/jwt-admin.service';
 
 @Injectable({

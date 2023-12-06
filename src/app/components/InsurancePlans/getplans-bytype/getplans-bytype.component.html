@@ -1,0 +1,27 @@
+<form class="d-flex" #searchForm="ngForm" (ngSubmit)="onSearch()">
+    <input class="form-control me-2" type="search" name="planType" [(ngModel)]="searchInput" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  
+  <table class="table" id="zebra-h">
+    <tr>
+        <td>Sr No.</td>
+        <td>Plan Id</td>
+        <td>Plan Name</td>
+        <td>Plan Type</td>
+        <td>Cover Amount</td>
+        <td>Plan Emi</td>
+        <td>Details</td>
+    </tr>
+    <tr *ngFor="let plan of insurancePlanList,index as i">
+        <td>{{i+1}}</td>
+        <td>{{plan.planId}}</td>
+        <td>{{plan.planName}}</td>
+        <td>{{plan.planType}}</td>
+        <td>{{plan.planCoverAmount}}</td>
+        <td>{{plan.planEmi}}</td>
+        <td>{{plan.planDetails}}</td>
+    </tr>
+    <div class ="space"></div>
+
+

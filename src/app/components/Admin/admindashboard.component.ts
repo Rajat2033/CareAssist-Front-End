@@ -10,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AdmindashboardComponent {
 
-  constructor(private jwtAdminService: JwtAdminService,private router:Router){}
+  constructor(private jwtAdminService: JwtAdminService,private router:Router,){}
 
-  logout() {
+  logoutAdmin() {
     
     this.jwtAdminService.clearToken();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login/admin']);
   }
 
   

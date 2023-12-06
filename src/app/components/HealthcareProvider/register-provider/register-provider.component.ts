@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HealthcareProvider } from 'src/app/Model/HealthcareProvider';
+import { Router } from '@angular/router';
+import { HealthcareProvider } from 'src/app/model/HealthcareProvider';
 import { HealthcareProviderService } from 'src/app/services/HealthcareProviderService/healthcare-provider.service';
 
 @Component({
@@ -13,19 +14,19 @@ export class RegisterProviderComponent implements OnInit {
   registerProviderFormsGroup!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,private providerService:HealthcareProviderService) { }
+  constructor(private formBuilder: FormBuilder, private providerService: HealthcareProviderService,private router:Router) { }
   ngOnInit(): void {
-    this.registerProviderFormsGroup=this.formBuilder.group({
-      providerName:['', Validators.required],
-      providerPassword:['', [Validators.required,Validators.pattern("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")]],
-      providerEmail:['', [Validators.required,Validators.email]],
-      providerGender:['', Validators.required],
-      providerSpeciality:['', Validators.required],
-      providerDesignation:['',Validators.required],
-      providerExperience:['', Validators.required],
-      providerQualification:['', Validators.required]
+    this.registerProviderFormsGroup = this.formBuilder.group({
+      providerName: ['', Validators.required],
+      providerPassword: ['', [Validators.required, Validators.pattern("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")]],
+      providerEmail: ['', [Validators.required, Validators.email]],
+      providerGender: ['', Validators.required],
+      providerSpeciality: ['', Validators.required],
+      providerDesignation: ['', Validators.required],
+      providerExperience: ['', Validators.required],
+      providerQualification: ['', Validators.required]
 
-    
+
 
     })
   }
@@ -36,31 +37,26 @@ export class RegisterProviderComponent implements OnInit {
     return this.registerProviderFormsGroup.controls;
   }
 
-  submitform()
-  {
-   
-      this.submitted=true;
-      if(this.registerProviderFormsGroup.invalid)
-      {
-        return;
-      }
-      else
-      {
-       this.registerProvider();
-      }
-  }
-  registerProvider() {
+  submitform() {
+
+    this.submitted = true;
     if (this.registerProviderFormsGroup.valid) {
-      const providerData = this.registerProviderFormsGroup.value;
-      this.providerService.registerHealthcareProvider(providerData).subscribe(
-        (response) => {
-          alert('Provider registered successfully:');
-         
-        },
-        (error) => {
-          console.error('Error registering provider:', error);
-        }
-      );
+
+      const formData = this.registerProviderFormsGroup.value;
+
+      this.registerProvider(formData);
     }
   }
+  registerProvider(formData: any) {
+
+     formData = this.registerProviderFormsGroup.value;
+    this.providerService.registerHealthcareProvider(formData).subscribe(
+      (response) => {
+        console.log('Provider registered successfully:');
+        this.router.navigate(['/login']);
+
+      }
+    );
+  }
 }
+

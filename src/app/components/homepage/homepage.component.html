@@ -24,7 +24,17 @@
                               </div>
                          </div>
                     </li>
-                    <li routerLink="/login">Login</li>
+                    <li >
+                         <div class="dropdown">
+                              Login
+                              <div class="dropdown-menu">
+                                   <a routerLink="/login/provider">Healthcare Provider</a>
+                                   <a routerLink="/login/company">Insurance Company</a>
+                                   <a routerLink="/login/patient">Patients </a>
+                                   <a routerLink="/login/admin">Admin </a>
+                              </div>
+                         </div>
+                    </li>
                </ul>
           </nav>
      </header>

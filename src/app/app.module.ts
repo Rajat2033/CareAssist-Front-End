@@ -14,17 +14,24 @@ import { GetAllInsurancePlansComponent } from './components/InsurancePlans/get-a
 import { RegisterProviderComponent } from './components/HealthcareProvider/register-provider/register-provider.component';
 import { UpdateProviderComponent } from './components/HealthcareProvider/update-provider/update-provider.component';
 import { GetAllProvidersComponent } from './components/HealthcareProvider/get-all-providers/get-all-providers.component';
-import { SubmitInsuranceClaimComponent } from './components/InsuranceClaims/submit-insurance-claim/submit-insurance-claim.component';
 import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/update-insurance-claim/update-insurance-claim.component';
 import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get-all-insurance-claims/get-all-insurance-claims.component';
 import { GenerateInvoiceComponent } from './components/InvoiceDetails/generate-invoice/generate-invoice.component';
 import { GetAllInvoicesComponent } from './components/InvoiceDetails/get-all-invoices/get-all-invoices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomepageComponent } from './components/homepage/homepage.component';
+
 import { AdmindashboardComponent } from './components/Admin/admindashboard.component';
 import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
-import { DashboardComponent } from './components/InsuranceCompany/CompanyDashboard/dashboard.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
+import { LoginPatientComponent } from './components/Patients/login-patient/login-patient.component';
+import { PatientDashboardComponent } from './components/Patients/patient-dashboard/patient-dashboard.component';
+import { LoginProviderComponent } from './components/HealthcareProvider/login-provider/login-provider.component';
+import { ProviderDashboardComponent } from './components/HealthcareProvider/provider-dashboard/provider-dashboard.component';
+import { DashboardComponent } from './components/InsuranceCompany/company-dashboard/dashboard.component';
+import { HomepageComponent } from './components/Homepage/homepage.component';
+import { LoginCompanyComponent } from './components/InsuranceCompany/login-company/login-company.component';
+import { AddNewclaimComponent } from './components/InsuranceClaims/add-newclaim/add-newclaim.component';
+import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-bytype/getplans-bytype.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +47,6 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
     RegisterProviderComponent,
     UpdateProviderComponent,
     GetAllProvidersComponent,
-    SubmitInsuranceClaimComponent,
     UpdateInsuranceClaimComponent,
     GetAllInsuranceClaimsComponent,
     GenerateInvoiceComponent,
@@ -51,7 +57,15 @@ import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.
 
     ForgotPasswordComponent,
       DashboardComponent,
-      LoginAdminComponent
+      LoginAdminComponent,
+      LoginPatientComponent,
+      PatientDashboardComponent,
+      PatientDashboardComponent,
+      LoginProviderComponent,
+      ProviderDashboardComponent,
+      LoginCompanyComponent,
+      AddNewclaimComponent,
+      GetplansBytypeComponent
 
   ],
   imports: [

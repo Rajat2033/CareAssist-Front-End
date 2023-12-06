@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HealthcareProvider } from 'src/app/Model/HealthcareProvider';
+import { HealthcareProvider } from 'src/app/model/HealthcareProvider';
 import { HealthcareProviderService } from 'src/app/services/HealthcareProviderService/healthcare-provider.service';
 
 @Component({
@@ -11,11 +11,19 @@ export class GetAllProvidersComponent {
 
   healthcareProvidersList:HealthcareProvider[] = [];
   constructor(private providerService: HealthcareProviderService){}
+
+
+
   getAllProvidersData()
   {
 this.providerService.getAllProviders().subscribe(data=>{this.healthcareProvidersList=data;})
   }
   
+
+  deleteProvider(providerId:number)
+  {
+    this.providerService.deleteProviderById(providerId).subscribe(data=>{alert("Provider Deleted");})
+  }
   
 
 }

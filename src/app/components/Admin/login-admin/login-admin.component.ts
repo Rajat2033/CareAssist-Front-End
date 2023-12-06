@@ -34,7 +34,7 @@ export class LoginAdminComponent {
   logout() {
     
     this.jwtAdminService.clearToken();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login/admin']);
   }
 }
 

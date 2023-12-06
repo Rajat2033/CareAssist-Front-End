@@ -17,6 +17,7 @@
                             <td>Email Id</td>
                             <td>Contact</td>
                             <td>Start Years</td>
+                            <td>Action</td>
                         </tr>
                         <tr *ngFor="let company of insuranceCompanyList,index as i">
                             <td>{{i+1}}</td>
@@ -25,6 +26,8 @@
                             <td>{{company.companyEmail}}</td>
                             <td>{{company.companyContact}}</td>
                             <td>{{company.companyStartYears}}</td>
+                            <td><button class="btn btn-danger " style="color: black;" (click)="deleteCompany(company.companyId)">Delete</button></td>
+
 
                         </tr>
                     </table>
