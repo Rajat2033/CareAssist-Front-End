@@ -64,6 +64,7 @@ header .logo {
         width: 100%;
     }
 }
+.space { margin-top: 400px; }
 
 .sidebar .active {
     border-radius: 5px;

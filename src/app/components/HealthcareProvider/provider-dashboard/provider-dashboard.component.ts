@@ -12,7 +12,7 @@ export class ProviderDashboardComponent {
 
   constructor(private jwtProviderService: JwtProviderService,private router:Router){}
 
-  logout() {
+  logoutProvider() {
     
     this.jwtProviderService.clearToken();
     this.router.navigate(['/login/provider']);

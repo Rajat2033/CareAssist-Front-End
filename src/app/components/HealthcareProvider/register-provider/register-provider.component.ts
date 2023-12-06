@@ -53,7 +53,7 @@ export class RegisterProviderComponent implements OnInit {
     this.providerService.registerHealthcareProvider(formData).subscribe(
       (response) => {
         console.log('Provider registered successfully:');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/login/provider']);
 
       }
     );

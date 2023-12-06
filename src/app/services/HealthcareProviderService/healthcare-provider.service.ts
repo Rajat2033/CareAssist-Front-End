@@ -50,4 +50,22 @@ export class HealthcareProviderService {
       return new Observable<string>();
     }
   }
+
+  updateProvider(provider:HealthcareProvider):Observable<HealthcareProvider>
+  {
+    const token = this.jwtProvider.getToken();
+
+    console.log(token);
+    if (token) {
+      const tokenString = 'Bearer ' + token;
+      const headers = new HttpHeaders().set('Authorization', tokenString);
+
+     
+      console.log(headers);
+      return this.http.put<HealthcareProvider>(this.providerURL + '/update/provider',provider, { headers});
+      }
+      else{
+        return new Observable<HealthcareProvider>;
+      }
+  }
 }

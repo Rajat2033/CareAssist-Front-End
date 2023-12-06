@@ -1,1 +1,101 @@
-<p>update-provider works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   
+        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Update
+                                     Healthcare Provider</h2>
+
+                                <form #formData="ngForm"(ngSubmit)="updateProvider(formData.value)">
+
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="id">Enter Provider Id</label>
+                                        <input type="text" id="id" class="form-control "
+                                            placeholder="Enter Your Id " name="providerId" ngModel required>
+
+                                    </div>
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="name">Enter Name</label>
+                                        <input type="text" id="name" class="form-control "
+                                            placeholder="Enter Your Full Name" name="providerName" ngModel required>
+
+                                    </div>
+
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="password">Enter Password</label>
+                                        <input type="password" class="form-control " id="password"
+                                            name="providerPassword" placeholder="Enter Your Password"
+                                           ngModel required >
+                                    </div>
+
+
+                                    <div class="form-outline md-4">
+                                        <label class="form-label" for="email">Enter Email Id</label>
+                                        <input type="email" id="email" class="form-control " id="email"
+                                            name="providerEmail" placeholder="Ex : xyz@gmail.com" ngModel required>
+                                    </div>
+
+                                    <label class="control-label">Enter Gender</label>
+                                    <select type="dropdown" class="form-control" name="providerGender" ngModel required
+                                        placeholder="select Gender">
+                                        <option value="" disabled selected>select gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Not Say"> Prefer Not to say</option>
+                                    </select>
+
+
+
+                                    <label class="label-control" for="speciality">Enter your Speciality</label>
+                                    <input type="text" class="form-control" id="speciality"
+                                        name="providerSpeciality" placeholder="Enter speciality"
+                                        ngModel required>
+
+                                    <label class="label-control " for="designation">Enter your Designation</label>
+                                    <input type="text" class="form-control" id="designation"
+                                        name="providerDesignation" placeholder="Enter Designation" ngModel required>
+
+                                    <label class="label-control" for="exp">Enter your Experience</label>
+                                    <select type="dropdown" class="form-control" name="providerExperience" ngModel required>
+                                        <option value="" disabled selected>select</option>
+                                        <option value="0">0</option>
+                                        <option value="1">1-2</option>
+                                        <option value="2">2-4</option>
+                                        <option value="4">4-7</option>
+                                        <option value="7"> 7-12 </option>
+                                    </select>
+                                    <label class="label-control" for="qualification">Enter your
+                                        qualification</label>
+                                    <input type="text" class="form-control" id="qualification"
+                                        name="providerQualification" placeholder="Ex : MBBS" ngModel required>
+
+                                    <br>
+                                    <button type="submit" class="btn btn-primary col-lg-12"
+                                        [disabled]="formData.invalid">Update Provider</button>
+                                    <br>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+ 
+
+
+</body>
+
+</html>

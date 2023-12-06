@@ -32,6 +32,8 @@ import { HomepageComponent } from './components/Homepage/homepage.component';
 import { LoginCompanyComponent } from './components/InsuranceCompany/login-company/login-company.component';
 import { AddNewclaimComponent } from './components/InsuranceClaims/add-newclaim/add-newclaim.component';
 import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-bytype/getplans-bytype.component';
+import { GetbyPatientnameComponent } from './components/Patients/getby-patientname/getby-patientname.component';
+import { GetpatientforInvoiceComponent } from './components/Patients/getpatientfor-invoice/getpatientfor-invoice.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-by
       ProviderDashboardComponent,
       LoginCompanyComponent,
       AddNewclaimComponent,
-      GetplansBytypeComponent
+      GetplansBytypeComponent,
+      GetbyPatientnameComponent,
+      GetpatientforInvoiceComponent
 
   ],
   imports: [

@@ -1,1 +1,55 @@
-<p>generate-invoice works!</p>
+<!-- generate-invoice.component.html -->
+
+
+<div class="card-body">
+    <i class="bi bi-arrow-left"> </i>
+    <button class="btn" routerLink="/provider/dashboard"> Back to dashboard</button>
+    <form [formGroup]="invoiceForm" class=" col-md-6" (ngSubmit)="onSubmit()">
+        <h1 [ngStyle]="{color:'red'}">Invoice Generate</h1>
+        <div class="form-group">
+            <label class="control-label">Invoice Date</label>
+            <input type="date" formControlName="invoiceDate" class="form-control">
+
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Invoice Due Date</label>
+            <input type="date" formControlName="invoiceDueDate" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Invoice Tax</label>
+            <input type="number" formControlName="invoiceTax" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Consulation Fees</label>
+            <input type="number" formControlName="consultationFee" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Diagnostic Tests Fees</label>
+            <input type="number" formControlName="diagnosticTestsFee" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Diagnostic Scans Fees</label>
+            <input type="number" formControlName="diagnosticScanFee" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Invoice Total Amount</label>
+            <input type="number" formControlName="invoiceTotalAmount" class="form-control">
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label">Total Bill Amount</label>
+            <input type="number" formControlName="totalBillAmount" class="form-control">
+        </div>
+
+
+        <br>
+        <button type="submit" class="btn btn-success col-md-6" [disabled]="!invoiceForm.valid">Generate Invoice</button>
+    </form>
+</div>
