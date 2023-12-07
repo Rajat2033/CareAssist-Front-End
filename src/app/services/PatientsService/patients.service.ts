@@ -11,7 +11,10 @@ import { JwtProviderService } from '../HealthcareProviderService/jwt-provider.se
 })
 export class PatientsService {
 
+patientId!:number;
+patientName!:string;
 
+private patientNameKey = 'patientName'; 
 
   patientURL: string = 'http://localhost:8080/api/v1/patients';
 
@@ -92,6 +95,20 @@ export class PatientsService {
       else{
         return new Observable<Patients>;
       }
+    }
+
+    setPatientInfo( name: string) {
+      
+      this.patientName = name;
+      
+    }
+  
+    // getPatientId() {
+    //   return this.patientId;
+    // }
+  
+    getPatientName() {
+      return this.patientName;
     }
 }
 

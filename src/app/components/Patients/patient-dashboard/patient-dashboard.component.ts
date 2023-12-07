@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Patients } from 'src/app/model/Patients';
 import { JwtPatientService } from 'src/app/services/PatientsService/jwt-patient.service';
+import { PatientsService } from 'src/app/services/PatientsService/patients.service';
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -8,7 +10,12 @@ import { JwtPatientService } from 'src/app/services/PatientsService/jwt-patient.
   styleUrls: ['./patient-dashboard.component.css']
 })
 export class PatientDashboardComponent {
-  constructor(private router: Router,private jwtPatientService:JwtPatientService){}
+  patientName!:string;
+  constructor(private router: Router,private jwtPatientService:JwtPatientService,private patientService:PatientsService){
+
+
+this.patientName =this.patientService.getPatientName();
+  }
 
   logout() {
     

@@ -1,1 +1,91 @@
-<p>update-patients works!</p>
+<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-5">
+                        <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Update
+                            Patients</h2>
+
+                        <form #formData="ngForm">
+
+                            <div class="form-outline md-4">
+                                <label class="form-label" for="id">Enter your Name</label>
+                                <input type="number" id="id" class="form-control " placeholder="Enter Your Id"
+                                    name="patientId" #patientId="ngModel" ngModel required>
+                                <span style="color: red;" *ngIf="patientId.touched &&  patientId.invalid">Id is
+                                    mandatory</span>
+
+
+                            </div>
+                            <div class="form-outline md-4">
+                                <label class="form-label" for="name">Enter Patient Name</label>
+                                <input type="text" id="name" class="form-control "
+                                    placeholder="Enter Your patient Name " name="patientName" #patientName="ngModel"
+                                    ngModel required>
+                                <span style="color: red;" *ngIf="patientName.touched &&  patientName.invalid">Enter your
+                                    name Properly</span>
+
+                            </div>
+
+
+                            <div class="form-outline md-4">
+                                <label class="form-label" for="password">Enter Password</label>
+                                <input type="password" class="form-control " id="password" name="patientPassword"
+                                    placeholder="Enter Your Password" ngModel required #patientPass="ngModel">
+                                <span style="color: red;" *ngIf="patientPass.touched &&  patientPass.invalid">Enter your
+                                    password Properly</span>
+
+                            </div>
+
+
+                            <div class="form-outline md-4">
+                                <label class="form-label" for="date">Enter Date of Birth</label>
+                                <input type="date" id="date" class="form-control " name="patientDOB"
+                                    placeholder="Ex : dd/mm/yy" #patientDOB="ngModel" ngModel required>
+                                <span style="color: red;" *ngIf="patientDOB.touched &&  patientDOB.invalid">Enter your
+                                    Date of birth</span>
+                            </div>
+
+                            <label class="control-label">Enter Gender</label>
+                            <select type="dropdown" class="form-control" name="patientGender" #patientGender="ngModel"
+                                ngModel required placeholder="select Gender">
+                                <option value="" disabled selected>select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Not Say"> Prefer Not to say</option>
+                            </select>
+                            <span style="color: red;" *ngIf="patientGender.touched &&  patientGender.invalid">Enter
+                                Gender</span>
+
+
+                            <div class="form-outline md-4">
+                                <label class="label-control" for="contact">Enter your patient Contact</label>
+                                <input type="tel" class="form-control" id="contact" name="patientContact"
+                                    placeholder="Enter Contact" ngModel #patientContact="ngModel" required>
+                                <span style="color: red;"
+                                    *ngIf="patientContact.touched &&  patientContact.invalid">Enter Contact
+                                    Properly</span>
+                            </div>
+
+                            <label class="label-control " for="address">Enter your Address</label>
+                            <input type="text" class="form-control" id="address" name="patientAddress"
+                                placeholder="Enter Address" ngModel required>
+
+                           
+                            <label class="label-control" for="symptoms">Enter your Symptoms</label>
+                            <input type="text" class="form-control" id="symptoms" name="patientDisease"
+                                placeholder="Enter Your Disease" ngModel required>
+
+                            <br>
+                            <button type="submit" class="btn btn-primary col-lg-12" [disabled]="formData.invalid">Update
+                                Patient</button>
+                            <br>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

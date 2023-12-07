@@ -12,6 +12,7 @@
         <td>Cover Amount</td>
         <td>Plan Emi</td>
         <td>Details</td>
+        <td>Action</td>
     </tr>
     <tr *ngFor="let plan of insurancePlanList,index as i">
         <td>{{i+1}}</td>
@@ -21,6 +22,7 @@
         <td>{{plan.planCoverAmount}}</td>
         <td>{{plan.planEmi}}</td>
         <td>{{plan.planDetails}}</td>
+        <td><button class="btn " style="background-color: greenyellow;" (click)="generateClaim(plan.planId)">Request Claim</button></td>
     </tr>
     <div class ="space"></div>
 

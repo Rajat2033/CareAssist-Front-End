@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { InsurancePlans } from 'src/app/model/InsurancePlans';
+import { Patients } from 'src/app/model/Patients';
 import { InsurancePlansService } from 'src/app/services/InsurancePlansService/insurance-plans.service';
+import { PatientsService } from 'src/app/services/PatientsService/patients.service';
 
 @Component({
   selector: 'app-getplans-bytype',
@@ -12,9 +14,12 @@ import { InsurancePlansService } from 'src/app/services/InsurancePlansService/in
 export class GetplansBytypeComponent {
 
   insurancePlanList!:InsurancePlans[];
-  
+  patientName!:any;
 
-  constructor(private planService:InsurancePlansService,private route:ActivatedRoute){}
+  constructor(private planService:InsurancePlansService,private route:ActivatedRoute,private router:Router,private patientService:PatientsService){
+
+   
+  }
   
  
   searchInput:string = '';
@@ -29,6 +34,12 @@ export class GetplansBytypeComponent {
       });
     }
   }
+  generateClaim(planId:number)
+  {
+ 
+   this.patientName=sessionStorage.getItem('patientName');
+    this.router.navigate(['/addclaim/',this.patientName , planId ]);
+  }
+
 }
 
-5

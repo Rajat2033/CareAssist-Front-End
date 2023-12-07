@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { InsurancePlans } from 'src/app/model/InsurancePlans';
 import { JwtAdminService } from '../AdminService/jwt-admin.service';
 import { JwtPatientService } from '../PatientsService/jwt-patient.service';
+import { JwtCompanyService } from '../InsuranceCompanyService/jwt-company.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,43 +17,56 @@ export class InsurancePlansService {
   adminURL: string = 'http://localhost:8080/api/v1/admin';
 
   plansURL: string = 'http://localhost:8080/api/v1/insuranceplans';
-  constructor(private http: HttpClient,private jwtAdmin:JwtAdminService,private jwtPatient:JwtPatientService) { }
+  constructor(private http: HttpClient, private jwtAdmin: JwtAdminService, private jwtPatient: JwtPatientService, private jwtCompany: JwtCompanyService) { }
 
 
   getAllInsurancePlans(): Observable<InsurancePlans[]> {
     const token = this.jwtAdmin.getToken();
-
     console.log(token);
     if (token) {
       const tokenString = 'Bearer ' + token;
       const headers = new HttpHeaders().set('Authorization', tokenString);
-
-   
-      return this.http.get<InsurancePlans[]>(this.adminURL + '/getallinsuranceplans', { headers});
-      }
-      else{
-        return new Observable<InsurancePlans[]>;
-      }
+      return this.http.get<InsurancePlans[]>(this.adminURL + '/getallinsuranceplans', { headers });
     }
-    
+    else {
+      return new Observable<InsurancePlans[]>;
+    }
+  }
 
-    searchPlans(planType:string): Observable<InsurancePlans[]> {
-      const token = this.jwtPatient.getToken();
-  
-      console.log(token);
-      if (token) {
-        const tokenString = 'Bearer ' + token;
-        const headers = new HttpHeaders().set('Authorization', tokenString);
-  
-     
-        return this.http.get<InsurancePlans[]>(this.plansURL + `/getplanbytype/${planType}`,{ headers});
-        }
-        else{
-          return new Observable<InsurancePlans[]>;
-        }
-      }
 
-      
-   
-    
+  searchPlans(planType: string): Observable<InsurancePlans[]> {
+    const token = this.jwtPatient.getToken();
+    console.log(token);
+    if (token) {
+      const tokenString = 'Bearer ' + token;
+      const headers = new HttpHeaders().set('Authorization', tokenString);
+      return this.http.get<InsurancePlans[]>(this.plansURL + `/getplanbytype/${planType}`, { headers });
+    }
+    else {
+      return new Observable<InsurancePlans[]>;
+    }
+  }
+
+
+
+  insertPlan(plans: InsurancePlans): Observable<InsurancePlans> {
+    const token = this.jwtPatient.getToken();
+    console.log(token);
+    if (token) {
+      const tokenString = 'Bearer ' + token;
+      const headers = new HttpHeaders().set('Authorization', tokenString);
+      return this.http.post<InsurancePlans>(this.plansURL + '/add/plan', plans, { headers })
+        .pipe(
+          catchError((error: any) => {
+            console.error('Error adding claim:', error);
+            return throwError(error); // Re-throw the error to be handled by the caller
+          })
+        );
+    } else {
+      // If the token is not available, emit an error
+      return throwError('Token not available');
+    }
+  }
+
+
 }
