@@ -1,0 +1,37 @@
+
+<div>
+    <input type="text" [(ngModel)]="searchParameter" placeholder="Enter Patient ID" />
+    <button (click)="searchInvoices(searchParameter)">Search</button>
+  </div>
+
+  <table class=" table"  id="zebra-h">
+    <thead>
+         <th>Sr.No</th>
+         <th>Invoice Id</th>
+         <th>Invoice Date</th>
+         <th>Invoice Due Date</th>
+         <th>Invoice Tax</th>
+         <th>Consultaion Fees</th>
+         <th>Diagnostic Test Fees</th>
+         <th>Diagnostic Scans Fees</th>
+         <th>Calculated Amount</th>
+         <th>Total Bill Amount</th>
+         <th>Patient Id</th>
+         <th>Status</th>
+     </thead>
+     <tr *ngFor="let invoices of invoicesList,index as i">
+         <td>{{i+1}}</td>
+         <td>{{invoices.invoiceId}}</td>
+         <td>{{invoices.invoiceDate}}</td>
+         <td>{{invoices.invoicedueDate}}</td>
+         <td>{{invoices.invoiceTax}}</td>
+         <td>{{invoices.consultationFee}}</td>
+         <td>{{invoices.diagnosticScanFee}}</td>
+         <td>{{invoices.diagnosticTestsFee}}</td>
+         <td>{{invoices.invoiceTotalAmount}}</td>
+         <td>{{invoices.totalBillAmount}}</td>
+         <td>{{searchParameter}}</td>
+         <td><input type="checkbox"  [(ngModel)]="status">{{   status}}</td>
+     </tr>
+ </table>
+<div class="space"></div>

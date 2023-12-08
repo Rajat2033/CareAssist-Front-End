@@ -97,15 +97,29 @@ private patientNameKey = 'patientName';
       }
     }
 
+    updatePatient(patient:Patients):Observable<Patients>
+    {
+      const token = this.jwtPatient.getToken();
+  
+      console.log(token);
+      if (token) {
+        const tokenString = 'Bearer ' + token;
+        const headers = new HttpHeaders().set('Authorization', tokenString);
+  
+       
+        console.log(headers);
+        return this.http.put<Patients>(this.patientURL + '/update/patient/'+patient.patientId,patient, { headers});
+        }
+        else{
+          return new Observable<Patients>;
+        }
+    }
+
     setPatientInfo( name: string) {
       
       this.patientName = name;
       
     }
-  
-    // getPatientId() {
-    //   return this.patientId;
-    // }
   
     getPatientName() {
       return this.patientName;

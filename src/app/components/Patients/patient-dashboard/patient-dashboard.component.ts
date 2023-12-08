@@ -10,11 +10,11 @@ import { PatientsService } from 'src/app/services/PatientsService/patients.servi
   styleUrls: ['./patient-dashboard.component.css']
 })
 export class PatientDashboardComponent {
-  patientName!:string;
+  patientName:any;
   constructor(private router: Router,private jwtPatientService:JwtPatientService,private patientService:PatientsService){
 
 
-this.patientName =this.patientService.getPatientName();
+this.patientName =sessionStorage.getItem('patientName');
   }
 
   logout() {

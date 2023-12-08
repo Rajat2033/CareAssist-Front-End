@@ -6,15 +6,15 @@
             <span class="text">All the Generated Invoices List</span>
         </div>
 
-        <table class=" table">
-            <tr>
-                <td>Sr.No</td>
-                <td>Invoice Id</td>
-                <td>Invoice Date</td>
-                <td>Invoice Due Data</td>
-                <td>Invoice Tax</td>
-                <td>Total Bill Amount</td>
-            </tr>
+        <table class=" table"  id="zebra-h">
+           <thead>
+                <th>Sr.No</th>
+                <th>Invoice Id</th>
+                <th>Invoice Date</th>
+                <th>Invoice Due Data</th>
+                <th>Invoice Tax</th>
+                <th>Total Bill Amount</th>
+            </thead>
             <tr *ngFor="let invoices of invoiceList,index as i">
                 <td>{{i+1}}</td>
                 <td>{{invoices.invoiceId}}</td>

@@ -11,6 +11,21 @@
     padding-bottom: 0 !important;
     min-height: 30px !important;
   }
+  #zebra-h tr:nth-child(even) {
+    color: darkslategrey;
+    background-color: lightblue;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px; /* Add space between thead and tbody */
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
   
 :root{
     /* ===== Colors ===== */

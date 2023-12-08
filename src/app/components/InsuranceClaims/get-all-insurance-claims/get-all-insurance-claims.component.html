@@ -8,17 +8,17 @@
             <span class="text">All the Insurance Claims List</span>
         </div>
 
-        <table class="table">
-            <tr>
-                <td>Sr.No</td>
-                <td>Claim Id</td>
+        <table class="table" id="zebra-h">
+            <thead>
+                <th>Sr.No</th>
+                <th>Claim Id</th>
 
-                <td>Claim Amount</td>
-                <td>Claim Status</td>
-                <td>Hospital Bill</td>
+                <th>Claim Amount</th>
+                <th>Claim Status</th>
+                <th>Hospital Bill</th>
                 <!-- <td>PatientId</td>
                             <td>planId</td> -->
-            </tr>
+            </thead>
             <tr *ngFor="let claims of claimsList,index as i">
 
                 <td>{{i+1}}</td>

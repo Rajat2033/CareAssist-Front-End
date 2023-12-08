@@ -15,7 +15,7 @@
             </nav>
         </header>
         <div>
-           
+
             <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
@@ -37,18 +37,25 @@
                             crossorigin="anonymous" referrerpolicy="no-referrer" /> <br>
                         <a class="list-group-item list-group-item-action py-2 ripple">
                             <i class="fa-solid fa-list-ul me-3"></i><span class="font-size"
-                                routerLink="get/planbytype">View 
+                                routerLink="get/planbytype">View
                                 Insurance Plans</span></a>
-                        <a  class="list-group-item list-group-item-action py-2 ripple" >
-                            <i class="fa-solid fa-user me-3"></i><span class="font-size" routerLink="update/patient">Update Details</span></a>
-                       
-                        <a  class="list-group-item list-group-item-action py-2 ripple">
-                            <i class="bi-card-list me-2"></i><span class="font-size">View Invoice
+                        <a class="list-group-item list-group-item-action py-2 ripple">
+                            <i class="fa-solid fa-user me-3"></i><span class="font-size"
+                                routerLink="update/patient">Update Details</span></a>
+
+                        <a class="list-group-item list-group-item-action py-2 ripple">
+                            <i class="bi-card-list me-2"></i><span class="font-size"
+                                routerLink="getinvoice/patientid">View Invoice
                                 Generated</span></a>
+
+                        <a class="list-group-item list-group-item-action py-2 ripple">
+                            <i class="bi-border-width me-2"></i><span class="font-size"
+                                routerLink="getinvoice/patientid">View Claim
+                                History</span></a>
 
                         <div class="space"></div>
                         <hr>
-                        <a  class="list-group-item list-group-item-action py-2 ripple">
+                        <a class="list-group-item list-group-item-action py-2 ripple">
                             <i class="fa fa-sign-out me-3"></i><span class="font-size"
                                 (click)="logout()">Logout</span></a>
                     </div>
@@ -57,14 +64,14 @@
         </div>
     </section>
 
-        <main style="margin-top: 58px;">
-            <div class="container pt-4">
+    <main style="margin-top: 58px;">
+        <div class="container pt-4">
 
-                <p>Welcome {{patientName}}</p>
-                <router-outlet></router-outlet>
-            </div>
-        </main>
-  
+            <p>Welcome Back !!!!! <b>{{patientName}}</b></p>
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+
 
 
 

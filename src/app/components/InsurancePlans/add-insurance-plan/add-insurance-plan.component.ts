@@ -15,7 +15,7 @@ export class AddInsurancePlanComponent {
   addPlan(formData:any) {
     this.planService.insertPlan(formData.form.value).subscribe(
       (response) => {
-        alert('Claim Added successfully:');
+        alert('New Insurance Plan Added successfully:');
 
       }
     );

@@ -33,7 +33,7 @@ export class InsuranceClaimsService {
     }
    
 
-    addClaim(claim: InsuranceClaims): Observable<InsuranceClaims> {
+    addClaim(claim: InsuranceClaims,patientName:string,planId:number): Observable<InsuranceClaims> {
       const token = this.jwtPatient.getToken();
     
       console.log(token);
@@ -41,7 +41,7 @@ export class InsuranceClaimsService {
         const tokenString = 'Bearer ' + token;
         const headers = new HttpHeaders().set('Authorization', tokenString);
     
-        return this.http.post<InsuranceClaims>(this.claimURL + '/add/newclaim', claim, { headers })
+        return this.http.post<InsuranceClaims>(this.claimURL + `/add/newclaim/${patientName}/${planId}`, claim, { headers })
           .pipe(
             catchError((error: any) => {
               console.error('Error adding claim:', error);

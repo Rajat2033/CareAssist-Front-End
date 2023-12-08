@@ -34,6 +34,7 @@ import { AddNewclaimComponent } from './components/InsuranceClaims/add-newclaim/
 import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-bytype/getplans-bytype.component';
 import { GetbyPatientnameComponent } from './components/Patients/getby-patientname/getby-patientname.component';
 import { GetpatientforInvoiceComponent } from './components/Patients/getpatientfor-invoice/getpatientfor-invoice.component';
+import { GetinvoicebyPatientidComponent } from './components/InvoiceDetails/getinvoiceby-patientid/getinvoiceby-patientid.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { GetpatientforInvoiceComponent } from './components/Patients/getpatientf
       AddNewclaimComponent,
       GetplansBytypeComponent,
       GetbyPatientnameComponent,
-      GetpatientforInvoiceComponent
+      GetpatientforInvoiceComponent,
+      GetinvoicebyPatientidComponent
 
   ],
   imports: [

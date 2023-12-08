@@ -7,7 +7,7 @@
                         <h2 class="text-uppercase text-center mb-5" [ngStyle]="{color:'#87CEEB'}">Update
                             Patients</h2>
 
-                        <form #formData="ngForm">
+                        <form #formData="ngForm" (ngSubmit)="updatePatient(formData)">
 
                             <div class="form-outline md-4">
                                 <label class="form-label" for="id">Enter your Name</label>
@@ -28,15 +28,25 @@
 
                             </div>
 
-
                             <div class="form-outline md-4">
+                                <label class="form-label" for="email">Enter Patient Email Address</label>
+                                <input type="email" id="email" class="form-control "
+                                    placeholder="Enter Your  Email " name="patientEmail" #patientEmail="ngModel"
+                                    ngModel required>
+                                <span style="color: red;" *ngIf="patientEmail.touched &&  patientEmail.invalid">Enter your
+                                    Email Properly</span>
+
+                            </div>
+
+
+                            <!-- <div class="form-outline md-4">
                                 <label class="form-label" for="password">Enter Password</label>
                                 <input type="password" class="form-control " id="password" name="patientPassword"
                                     placeholder="Enter Your Password" ngModel required #patientPass="ngModel">
                                 <span style="color: red;" *ngIf="patientPass.touched &&  patientPass.invalid">Enter your
                                     password Properly</span>
 
-                            </div>
+                            </div> -->
 
 
                             <div class="form-outline md-4">
