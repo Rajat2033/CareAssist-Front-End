@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InsuranceClaims } from 'src/app/model/InsuranceClaims';
 import { InsuranceClaimsService } from 'src/app/services/InsuranceClaimsService/insurance-claims.service';
 
@@ -7,15 +7,16 @@ import { InsuranceClaimsService } from 'src/app/services/InsuranceClaimsService/
   templateUrl: './get-all-insurance-claims.component.html',
   styleUrls: ['./get-all-insurance-claims.component.css']
 })
-export class GetAllInsuranceClaimsComponent {
+export class GetAllInsuranceClaimsComponent implements OnInit {
 
   claimsList: InsuranceClaims[] = [];
 
   constructor(private claimService: InsuranceClaimsService) { }
-  getAllClaims() {
+  ngOnInit(): void {
     this.claimService.getAllInsuranceClaims().subscribe(data => {
       this.claimsList = data;
     }
     )
   }
+
 }

@@ -195,3 +195,16 @@ header .navbar ul li:hover {
   height: 50px;
   background-color: #87CEEB;
 }
+
+a {
+  color: inherit; /* Use the default text color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  color: #0088cc; /* Change color on hover if needed */
+}
+
+a:active {
+  color: inherit; /* Use the default text color on active/clicked state */
+}

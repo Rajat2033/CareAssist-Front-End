@@ -22,6 +22,7 @@ export class LoginCompanyComponent {
       this.jwtCompanyService.login(username, password).subscribe(
         (token) => {
         
+          sessionStorage.setItem('companyName',username);
           console.log(token);
           this.jwtCompanyService.setToken(token);
           this.router.navigate(['/company/dashboard'])

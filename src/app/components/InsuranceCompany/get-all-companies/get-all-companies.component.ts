@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InsuranceCompany } from 'src/app/model/InsuranceCompany';
 import { InsuranceCompanyService } from 'src/app/services/InsuranceCompanyService/insurance-company.service';
 
@@ -7,19 +7,22 @@ import { InsuranceCompanyService } from 'src/app/services/InsuranceCompanyServic
   templateUrl: './get-all-companies.component.html',
   styleUrls: ['./get-all-companies.component.css']
 })
-export class GetAllCompaniesComponent {
+export class GetAllCompaniesComponent implements OnInit{
 
   insuranceCompanyList:InsuranceCompany[] =[];
  
-  constructor(private companyService:InsuranceCompanyService){}
-
- 
-
-  getAllComapniesData(){
+  constructor(private companyService:InsuranceCompanyService){
+    
+  }
+  ngOnInit(): void {
     this.companyService.getAllCompanyData().subscribe(data=>{
       this.insuranceCompanyList = data;
     })
   }
+
+ 
+
+
 
   deleteCompany(companyId:number)
   {

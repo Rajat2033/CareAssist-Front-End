@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { InsurancePlansService } from 'src/app/services/InsurancePlansService/insurance-plans.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { InsurancePlansService } from 'src/app/services/InsurancePlansService/in
 })
 export class AddInsurancePlanComponent {
 
-  constructor(private planService: InsurancePlansService) {
-
+  companyName!:any;
+  constructor(private planService: InsurancePlansService,private route:ActivatedRoute) {
+   this.companyName=sessionStorage.getItem('companyName');
   }
 
   addPlan(formData:any) {
-    this.planService.insertPlan(formData.form.value).subscribe(
+    console.log(this.companyName);
+    this.planService.insertPlan(formData.form.value,this.companyName).subscribe(
       (response) => {
         alert('New Insurance Plan Added successfully:');
 

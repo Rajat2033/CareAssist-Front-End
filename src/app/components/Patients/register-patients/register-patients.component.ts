@@ -50,8 +50,8 @@ export class RegisterPatientsComponent implements OnInit {
     formData = this.registerPatientFormsGroup.value;
     this.patientService.registerPatients(formData).subscribe(
       (response) => {
-        console.log('Patient Has registered successfully:');
-        this.router.navigate(['/login']);
+        alert('Patient Has registered successfully:');
+        this.router.navigate(['/login/patient']);
 
       }
     );

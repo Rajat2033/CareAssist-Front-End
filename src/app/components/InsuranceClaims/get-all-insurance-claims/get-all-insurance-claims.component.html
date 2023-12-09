@@ -1,10 +1,8 @@
 <div class="dash-content">
 
-
-    <button class="btn-success" (click)="getAllClaims()">Display All The Insurance Claims</button>
     <div class="activity">
         <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-file-exclamation-alt"></i>
             <span class="text">All the Insurance Claims List</span>
         </div>
 
@@ -12,12 +10,11 @@
             <thead>
                 <th>Sr.No</th>
                 <th>Claim Id</th>
-
                 <th>Claim Amount</th>
                 <th>Claim Status</th>
                 <th>Hospital Bill</th>
-                <!-- <td>PatientId</td>
-                            <td>planId</td> -->
+                <th>Patient Name</th>
+                <th>Plan Name </th>
             </thead>
             <tr *ngFor="let claims of claimsList,index as i">
 
@@ -26,6 +23,8 @@
                 <td>{{claims.claimAmount}}</td>
                 <td>{{claims.claimStatus}}</td>
                 <td>{{claims.invoiceAmount}}</td>
+                <td>{{claims.patient?.patientName}}</td>
+                <td>{{claims.plans?.planName}}</td>
             </tr>
         </table>
 

@@ -20,6 +20,9 @@ export class InsurancePlansService {
   constructor(private http: HttpClient, private jwtAdmin: JwtAdminService, private jwtPatient: JwtPatientService, private jwtCompany: JwtCompanyService) { }
 
 
+
+
+
   getAllInsurancePlans(): Observable<InsurancePlans[]> {
     const token = this.jwtAdmin.getToken();
     console.log(token);
@@ -32,6 +35,10 @@ export class InsurancePlansService {
       return new Observable<InsurancePlans[]>;
     }
   }
+
+
+
+
 
 
   searchPlans(planType: string): Observable<InsurancePlans[]> {
@@ -49,16 +56,20 @@ export class InsurancePlansService {
 
 
 
-  insertPlan(plans: InsurancePlans): Observable<InsurancePlans> {
+
+
+
+
+  insertPlan(plans: InsurancePlans,companyName:string): Observable<InsurancePlans> {
     const token = this.jwtPatient.getToken();
     console.log(token);
     if (token) {
       const tokenString = 'Bearer ' + token;
       const headers = new HttpHeaders().set('Authorization', tokenString);
-      return this.http.post<InsurancePlans>(this.plansURL + '/add/plan', plans, { headers })
+      return this.http.post<InsurancePlans>(this.plansURL + `/add/plan/${companyName}`, plans, { headers })
         .pipe(
           catchError((error: any) => {
-            console.error('Error adding claim:', error);
+            console.error('Error adding plan:', error);
             return throwError(error); // Re-throw the error to be handled by the caller
           })
         );
@@ -69,4 +80,7 @@ export class InsurancePlansService {
   }
 
 
+
+
+  
 }

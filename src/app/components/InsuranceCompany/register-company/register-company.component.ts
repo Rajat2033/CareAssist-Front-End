@@ -42,8 +42,8 @@ export class RegisterCompanyComponent implements OnInit {
     formData = this.registerCompanyFormsGroup.value;
     this.companyService.registerCompany(formData).subscribe(
       (response) => {
-        console.log('Insurance company registered successfully:');
-        this.router.navigate(['/login']);
+       alert('Insurance company registered successfully:');
+        this.router.navigate(['/login/company']);
 
       }
     );

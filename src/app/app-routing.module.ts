@@ -15,7 +15,6 @@ import { UpdateProviderComponent } from './components/HealthcareProvider/update-
 import { GetAllProvidersComponent } from './components/HealthcareProvider/get-all-providers/get-all-providers.component';
 import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get-all-insurance-claims/get-all-insurance-claims.component';
 import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/update-insurance-claim/update-insurance-claim.component';
-import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
 import { AdmindashboardComponent } from './components/Admin/admindashboard.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { ProviderDashboardComponent } from './components/HealthcareProvider/provider-dashboard/provider-dashboard.component';
@@ -29,7 +28,11 @@ import { AddNewclaimComponent } from './components/InsuranceClaims/add-newclaim/
 import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-bytype/getplans-bytype.component';
 import { GetbyPatientnameComponent } from './components/Patients/getby-patientname/getby-patientname.component';
 import { GetpatientforInvoiceComponent } from './components/Patients/getpatientfor-invoice/getpatientfor-invoice.component';
-import { GetinvoicebyPatientidComponent } from './components/InvoiceDetails/getinvoiceby-patientid/getinvoiceby-patientid.component';
+import { GetclaimPatientnameComponent } from './components/Patients/getclaim-patientname/getclaim-patientname.component';
+import { GetinvoicePatientnameComponent } from './components/InvoiceDetails/getinvoice-patientname/getinvoice-patientname.component';
+import { ViewclaimforCompanyComponent } from './components/InsuranceClaims/viewclaimfor-company/viewclaimfor-company.component';
+import { GetinvoicepdfComponent } from './components/InvoiceDetails/getinvoicepdf/getinvoicepdf.component';
+import { AddadminComponent } from './components/Admin/addadmin/addadmin.component';
 
 
 const routes: Routes = [
@@ -40,27 +43,20 @@ const routes: Routes = [
   { path: 'login/patient', component: LoginPatientComponent },
   { path: 'login/company', component: LoginCompanyComponent },
   { path: 'registerpatient', component: RegisterPatientsComponent },
+  { path: 'registercompany', component: RegisterCompanyComponent },
+  { path: 'registerprovider', component: RegisterProviderComponent },
+
   { path: 'updatepatients/:id', component: UpdatePatientsComponent },
 
-  { path: 'registercompany', component: RegisterCompanyComponent },
-  { path: 'companies/:id', component: UpdateCompanyComponent },
 
+  { path: 'admin/dashboard', component: AdmindashboardComponent, children: [ {path:'addadmin',component:AddadminComponent},{ path: 'getallcompanies', component: GetAllCompaniesComponent }, { path: 'getallpatients', component: GetAllPatientsComponent }, { path: 'getallclaims', component: GetAllInsuranceClaimsComponent }, { path: 'getallproviders', component: GetAllProvidersComponent }, { path: 'getallplans', component: GetAllInsurancePlansComponent }, { path: 'getallinvoices', component: GetAllInvoicesComponent }] },
+  { path: 'provider/dashboard', component: ProviderDashboardComponent, children: [{ path: 'update/provider', component: UpdateProviderComponent }, { path: "getpatients", component: GetpatientforInvoiceComponent }, { path: 'generateinvoice/:patientId', component: GenerateInvoiceComponent }, { path: 'get/patientname', component: GetbyPatientnameComponent }, { path: 'getallpatients', component: GetAllPatientsComponent }] },
+  { path: 'company/dashboard', component: DashboardComponent, children: [{ path: 'update/:claimId', component: UpdateInsuranceClaimComponent }, { path: 'updatecompany', component: UpdateCompanyComponent }, { path: 'getclaim/:companyName', component: ViewclaimforCompanyComponent }, { path: 'add/plan/:companyName', component: AddInsurancePlanComponent },] },
+  { path: 'patient/dashboard', component: PatientDashboardComponent, children: [{ path: 'getclaim/:patientName', component: GetclaimPatientnameComponent }, { path: 'getinvoice/:patientName', component: GetinvoicePatientnameComponent }, { path: 'update/patient', component: UpdatePatientsComponent }, { path: 'get/planbytype', component: GetplansBytypeComponent }, { path: 'add/newclaim', component: AddNewclaimComponent }] },
 
-
- 
-  { path: 'generateinvoice', component: GenerateInvoiceComponent },
-
-  { path: 'registerprovider', component: RegisterProviderComponent },
-  { path: 'addprovider', component: RegisterProviderComponent },
-  { path: 'updateprovider', component: UpdateProviderComponent },
-  { path: 'updateclaim', component: UpdateInsuranceClaimComponent },
-  { path: 'admin/dashboard', component: AdmindashboardComponent, children: [{ path: 'getallcompanies', component: GetAllCompaniesComponent }, { path: 'getallpatients', component: GetAllPatientsComponent }, { path: 'getallclaims', component: GetAllInsuranceClaimsComponent }, { path: 'getallproviders', component: GetAllProvidersComponent }, { path: 'getallplans', component: GetAllInsurancePlansComponent }, { path: 'getallinvoices', component: GetAllInvoicesComponent }] },
-  { path: 'forgetpassword', component: ForgotPasswordComponent },
-  { path: 'provider/dashboard', component: ProviderDashboardComponent, children: [{path:'update/provider',component:UpdateProviderComponent},{path:"getpatients",component:GetpatientforInvoiceComponent },{ path: 'generateinvoice/:patientId', component: GenerateInvoiceComponent }, { path: 'get/patientname', component: GetbyPatientnameComponent },{ path: 'getallpatients', component: GetAllPatientsComponent }] },
-  { path: 'company/dashboard', component: DashboardComponent ,children:[ { path: 'add/plan', component: AddInsurancePlanComponent },] },
-  { path: 'patient/dashboard', component: PatientDashboardComponent, children: [{path:'getinvoice/patientid',component:GetinvoicebyPatientidComponent},{path:'update/patient',component:UpdatePatientsComponent},{ path: 'get/planbytype', component: GetplansBytypeComponent }, { path: 'add/newclaim', component: AddNewclaimComponent }] },
   { path: 'generateinvoice/:patientId', component: GenerateInvoiceComponent },
-  {path:'addclaim/:patientName/:planId',component:AddNewclaimComponent}
+  { path: 'addclaim/:patientName/:planId', component: AddNewclaimComponent },
+  { path: 'getpdf/:invoiceId', component: GetinvoicepdfComponent }
 
 ];
 

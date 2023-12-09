@@ -1,8 +1,8 @@
 <div class="dash-content">
-    <button class="btn-success" (click)="getAllPatientsData()">Display All The patients</button>
+   
     <div class="activity">
         <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-file-exclamation-alt"></i>
             <span class="text">All the Patients List</span>
         </div>
 
@@ -33,7 +33,7 @@
                 <td>{{patient.patientContact}}</td>
                 <td>{{patient.patientAddress}}</td>
                 <td>{{patient.patientDisease}}</td>
-                <td><button class="btn btn-danger " style="color: black;" (click)="deletePatients(patient.patientId)">Delete</button></td>
+                <td><button type="submit"class=" btn-danger " style="color: black; background-color: red;" (click)="deletePatients(patient.patientId)">Delete</button></td>
 
             </tr>
         </table>

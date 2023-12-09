@@ -1,0 +1,39 @@
+<div class="card-body">
+    <i class="bi bi-arrow-left"> </i>
+    <button class="btn" routerLink="/provider/dashboard"> Back to dashboard</button>
+    <div class="container " id="invoice" #invoice>
+
+        <body>
+            <h1>Invoice Details</h1>
+            <br><br>
+            <ul>
+                <li>Invoice Id :{{invoiceDetails.invoiceId}}</li>
+                <br>
+                <li>Invoice Date :{{invoiceDetails.invoiceDate}}</li>
+                <br>
+                <li>Invoice Due Date :{{invoiceDetails.invoiceDueDate}}</li>
+                <br>
+                <li>Patient Id :{{invoiceDetails.patient?.patientId}}</li>
+                <br>
+                <li>Patient Name :{{invoiceDetails.patient?.patientName}}</li>
+                <br>
+                <li>Patient Address :{{invoiceDetails.patient?.patientAddress}}</li>
+                <br>
+                <li>Invoice Tax :{{invoiceDetails.invoiceTax}}</li>
+                <br>
+                <li>Consultation Fees :{{invoiceDetails.consultationFee}}</li>
+                <br>
+                <li>Diagnostic Test Fees :{{invoiceDetails.diagnosticTestsFee}}</li>
+                <br>
+                <li>Diagnostic Scans Fees:{{invoiceDetails.diagnosticScanFee}}</li>
+                <br>
+                <li>Calculated Amount :{{invoiceDetails.invoiceTotalAmount}}</li>
+                <br>
+                <li>Total Bill Amount :{{invoiceDetails.totalBillAmount}}</li>
+
+            </ul>
+        </body>
+    </div>
+
+
+    <button type="button" class="btn btn-success" (click)="generatePdf()">Generate Invoice</button>

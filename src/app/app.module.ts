@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RegisterPatientsComponent } from './components/Patients/register-patients/register-patients.component';
 import { UpdatePatientsComponent } from './components/Patients/update-patients/update-patients.component';
@@ -18,10 +19,8 @@ import { UpdateInsuranceClaimComponent } from './components/InsuranceClaims/upda
 import { GetAllInsuranceClaimsComponent } from './components/InsuranceClaims/get-all-insurance-claims/get-all-insurance-claims.component';
 import { GenerateInvoiceComponent } from './components/InvoiceDetails/generate-invoice/generate-invoice.component';
 import { GetAllInvoicesComponent } from './components/InvoiceDetails/get-all-invoices/get-all-invoices.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdmindashboardComponent } from './components/Admin/admindashboard.component';
-import { ForgotPasswordComponent } from './components/Login/forgot-password/forgot-password.component';
 import { LoginAdminComponent } from './components/Admin/login-admin/login-admin.component';
 import { LoginPatientComponent } from './components/Patients/login-patient/login-patient.component';
 import { PatientDashboardComponent } from './components/Patients/patient-dashboard/patient-dashboard.component';
@@ -34,7 +33,11 @@ import { AddNewclaimComponent } from './components/InsuranceClaims/add-newclaim/
 import { GetplansBytypeComponent } from './components/InsurancePlans/getplans-bytype/getplans-bytype.component';
 import { GetbyPatientnameComponent } from './components/Patients/getby-patientname/getby-patientname.component';
 import { GetpatientforInvoiceComponent } from './components/Patients/getpatientfor-invoice/getpatientfor-invoice.component';
-import { GetinvoicebyPatientidComponent } from './components/InvoiceDetails/getinvoiceby-patientid/getinvoiceby-patientid.component';
+import { ViewclaimforCompanyComponent } from './components/InsuranceClaims/viewclaimfor-company/viewclaimfor-company.component';
+import { GetclaimPatientnameComponent } from './components/Patients/getclaim-patientname/getclaim-patientname.component';
+import { GetinvoicePatientnameComponent } from './components/InvoiceDetails/getinvoice-patientname/getinvoice-patientname.component';
+import { GetinvoicepdfComponent } from './components/InvoiceDetails/getinvoicepdf/getinvoicepdf.component';
+import { AddadminComponent } from './components/Admin/addadmin/addadmin.component';
 
 @NgModule({
   declarations: [
@@ -56,9 +59,6 @@ import { GetinvoicebyPatientidComponent } from './components/InvoiceDetails/geti
     GetAllInvoicesComponent,
     HomepageComponent,
     AdmindashboardComponent,
-   
-
-    ForgotPasswordComponent,
       DashboardComponent,
       LoginAdminComponent,
       LoginPatientComponent,
@@ -71,7 +71,11 @@ import { GetinvoicebyPatientidComponent } from './components/InvoiceDetails/geti
       GetplansBytypeComponent,
       GetbyPatientnameComponent,
       GetpatientforInvoiceComponent,
-      GetinvoicebyPatientidComponent
+      ViewclaimforCompanyComponent,
+      GetclaimPatientnameComponent,
+      GetinvoicePatientnameComponent,
+      GetinvoicepdfComponent,
+      AddadminComponent
 
   ],
   imports: [

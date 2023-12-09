@@ -9,50 +9,23 @@ import { HealthcareProviderService } from 'src/app/services/HealthcareProviderSe
   templateUrl: './register-provider.component.html',
   styleUrls: ['./register-provider.component.css']
 })
-export class RegisterProviderComponent implements OnInit {
+export class RegisterProviderComponent   {
 
-  registerProviderFormsGroup!: FormGroup;
-  submitted = false;
-
+ 
   constructor(private formBuilder: FormBuilder, private providerService: HealthcareProviderService,private router:Router) { }
-  ngOnInit(): void {
-    this.registerProviderFormsGroup = this.formBuilder.group({
-      providerName: ['', Validators.required],
-      providerPassword: ['', [Validators.required, Validators.pattern("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")]],
-      providerEmail: ['', [Validators.required, Validators.email]],
-      providerGender: ['', Validators.required],
-      providerSpeciality: ['', Validators.required],
-      providerDesignation: ['', Validators.required],
-      providerExperience: ['', Validators.required],
-      providerQualification: ['', Validators.required]
 
 
 
-    })
-  }
 
+  
 
-
-  get f() {
-    return this.registerProviderFormsGroup.controls;
-  }
-
-  submitform() {
-
-    this.submitted = true;
-    if (this.registerProviderFormsGroup.valid) {
-
-      const formData = this.registerProviderFormsGroup.value;
-
-      this.registerProvider(formData);
-    }
-  }
+  
   registerProvider(formData: any) {
 
-     formData = this.registerProviderFormsGroup.value;
-    this.providerService.registerHealthcareProvider(formData).subscribe(
+    
+    this.providerService.registerHealthcareProvider(formData.form.value).subscribe(
       (response) => {
-        console.log('Provider registered successfully:');
+        alert('Provider registered successfully:');
         this.router.navigate(['/login/provider']);
 
       }

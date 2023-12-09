@@ -1,3 +1,5 @@
+import { InsuranceCompany } from "./InsuranceCompany";
+
 export interface InsurancePlans {
     planId: number;
     planName: string;
@@ -5,5 +7,6 @@ export interface InsurancePlans {
     planCoverAmount: number;
     planEmi: number;
     planDetails: string;
+    company:InsuranceCompany;
 
 }

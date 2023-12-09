@@ -1,26 +1,24 @@
 <div class="dash-content">
 
-
-    <button class="btn-success" (click)="getAllProvidersData()">Display All The Healthcare Providers</button>
     <div class="activity">
         <div class="title">
-            <i class="uil uil-clock-three"></i>
+            <i class="uil uil-file-exclamation-alt"></i>
             <span class="text">All the Providers List</span>
         </div>
 
         <table class="table " id="zebra-h">
-            <tr>
-                <td>Sr No.</td>
-                <td>Id</td>
-                <td>Name</td>
-                <td>Email Id</td>
-                <td>Gender</td>
-                <td>Speciality</td>
-                <td>Designation</td>
-                <td>Experience</td>
-                <td>Qualification</td>
-                <td>Action</td>
-            </tr>
+            <thead>
+                <th>Sr No.</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Gender</th>
+                <th>Speciality</th>
+                <th>Designation</th>
+                <th>Experience</th>
+                <th>Qualification</th>
+                <th>Action</th>
+            </thead>
 
             <tr *ngFor="let providers of healthcareProvidersList,index as i">
                 <td>{{i+1}}</td>
@@ -32,7 +30,7 @@
                 <td>{{providers.providerDesignation}}</td>
                 <td>{{providers.providerExperience}}</td>
                 <td>{{providers.providerQualification}}</td>
-                <td><button class="btn btn-danger " style="color: black;" (click)="deleteProvider(providers.providerId)">Delete</button></td>
+                <td><button class="btn btn-danger "  (click)="deleteProvider(providers.providerId)">Delete</button></td>
 
             </tr>
         </table>

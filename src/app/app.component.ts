@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular_templates';
+
+  // generatePdf()
+  // {
+  //   let pdf=new jsPDF();
+  //   pdf.text('Hello World',10,10);
+  //   pdf.save('hello_world.pdf');
+  // }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/AdminService/admin.service';
 import { JwtAdminService } from 'src/app/services/AdminService/jwt-admin.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { JwtAdminService } from 'src/app/services/AdminService/jwt-admin.service
   styleUrls: ['./login-admin.component.css']
 })
 export class LoginAdminComponent {
-  constructor(private jwtAdminService:JwtAdminService,private router:Router){}
+  constructor(private jwtAdminService:JwtAdminService,private router:Router,private adminService:AdminService){}
 
 
   login(formData:any)
@@ -21,6 +22,9 @@ export class LoginAdminComponent {
 
       this.jwtAdminService.login(username, password).subscribe(
         (token) => {
+
+
+          sessionStorage.setItem('adminName',username);
         
           console.log(token);
           this.jwtAdminService.setToken(token);

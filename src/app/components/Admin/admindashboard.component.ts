@@ -10,7 +10,13 @@ import { Router } from '@angular/router';
 })
 export class AdmindashboardComponent {
 
-  constructor(private jwtAdminService: JwtAdminService,private router:Router,){}
+  adminname!:any;
+  constructor(private jwtAdminService: JwtAdminService,private router:Router){
+
+    this.adminname=sessionStorage.getItem('adminName');
+    console.log(this.adminname);
+
+  }
 
   logoutAdmin() {
     

@@ -8,7 +8,10 @@ import { JwtCompanyService } from 'src/app/services/InsuranceCompanyService/jwt-
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private jwtCompanyService: JwtCompanyService,private router:Router){}
+  companyName:any;
+  constructor(private jwtCompanyService: JwtCompanyService,private router:Router){
+    this.companyName=sessionStorage.getItem('companyName');
+  }
 
   logoutCompany() {
     

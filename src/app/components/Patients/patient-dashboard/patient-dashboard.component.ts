@@ -17,6 +17,12 @@ export class PatientDashboardComponent {
 this.patientName =sessionStorage.getItem('patientName');
   }
 
+
+  getClaimHistory()
+  {
+    
+  }
+
   logout() {
     
     this.jwtPatientService.clearToken();

@@ -25,12 +25,16 @@ table {
     margin-top: 20px;
     /* Add space between thead and tbody */
 }
-
+.btn
+{
+    background-color:#cd2929 ;
+}
 th,
 td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
+    color: #000;
 }
 
 :root {

@@ -21,6 +21,10 @@ export class InvoiceDetailsService {
   constructor(private http: HttpClient, private jwtAdmin: JwtAdminService, private jwtProvider: JwtProviderService, private jwtPatient: JwtPatientService) { }
 
 
+
+
+
+
   getAllInvoicesDetails(): Observable<InvoiceDetails[]> {
     const token = this.jwtAdmin.getToken();
 
@@ -37,9 +41,35 @@ export class InvoiceDetailsService {
       return new Observable<InvoiceDetails[]>;
     }
 
-
-
   }
+
+
+
+
+  getInvoiceById(invoiceId: number)
+  {
+    const token = this.jwtPatient.getToken();
+
+    console.log(token);
+    if (token) {
+      const tokenString = 'Bearer ' + token;
+      const headers = new HttpHeaders().set('Authorization', tokenString);
+
+      return this.http.get<InvoiceDetails>(this.invoiceURL + `/getinvoicebyid/${invoiceId}`,{headers})
+        .pipe(
+          catchError((error: any) => {
+            console.error('Error searching patient:', error);
+            return throwError(error); // Re-throw the error to be handled by the caller
+          })
+        );
+    } else {
+      // If the token is not available, emit an error
+      return throwError('Token not available');
+    }
+  }
+
+
+  
 
 
   createNewInvoice(invoice: InvoiceDetails, patientId: number): Observable<InvoiceDetails> {
@@ -63,7 +93,13 @@ export class InvoiceDetailsService {
     }
   }
 
-  getInvoicesByPatientId(patientId: number): Observable<InvoiceDetails[]> {
+
+  
+
+
+
+
+  getInvoicesByPatientName(patientName: string): Observable<InvoiceDetails[]> {
     const token = this.jwtPatient.getToken();
 
     console.log(token);
@@ -71,7 +107,7 @@ export class InvoiceDetailsService {
       const tokenString = 'Bearer ' + token;
       const headers = new HttpHeaders().set('Authorization', tokenString);
 
-      return this.http.get<InvoiceDetails[]>(this.invoiceURL + `/getinvoicebypatientid/${patientId}`,{headers})
+      return this.http.get<InvoiceDetails[]>(this.invoiceURL + `/invoicebypatientname/${patientName}`,{headers})
         .pipe(
           catchError((error: any) => {
             console.error('Error searching patient:', error);
