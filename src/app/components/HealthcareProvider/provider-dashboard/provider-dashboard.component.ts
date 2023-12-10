@@ -10,7 +10,11 @@ import { JwtProviderService } from 'src/app/services/HealthcareProviderService/j
 })
 export class ProviderDashboardComponent {
 
-  constructor(private jwtProviderService: JwtProviderService,private router:Router){}
+  providerName!:any;
+  constructor(private jwtProviderService: JwtProviderService,private router:Router){
+
+    this.providerName=sessionStorage.getItem('providerName');
+  }
 
   logoutProvider() {
     

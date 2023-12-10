@@ -9,10 +9,14 @@ import { InsuranceCompanyService } from 'src/app/services/InsuranceCompanyServic
   styleUrls: ['./register-company.component.css']
 })
 export class RegisterCompanyComponent implements OnInit {
-
+  maxDate?:string;
   registerCompanyFormsGroup!: FormGroup;
   submitted = false;
-  constructor(private companyService: InsuranceCompanyService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(private companyService: InsuranceCompanyService, private router: Router, private formBuilder: FormBuilder) {
+
+    const today=new Date();
+    this.maxDate=today.toISOString().split('T')[0 ];
+   }
   ngOnInit(): void {
     this.registerCompanyFormsGroup = this.formBuilder.group({
       companyName: ['', Validators.required],

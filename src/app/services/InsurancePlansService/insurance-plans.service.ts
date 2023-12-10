@@ -80,6 +80,30 @@ export class InsurancePlansService {
   }
 
 
+  // getPlanByCompanyName(companyName:string):Observable<InsurancePlans[]>
+  // {
+  //   const token = this.jwtCompany.getToken();
+  //   console.log(token);
+  //   if (token) {
+  //     const tokenString = 'Bearer ' + token;
+  //     const headers = new HttpHeaders().set('Authorization', tokenString);
+  //     return this.http.get<InsurancePlans[]>(this.plansURL + `/getallplansbycompanyname/${companyName}`, { headers })
+  //       .pipe(
+  //         catchError((error: any) => {
+  //           console.error('Error adding plan:', error);
+  //           return throwError(error); // Re-throw the error to be handled by the caller
+  //         })
+  //       );
+  //   } else {
+  //     // If the token is not available, emit an error
+  //     return throwError('Token not available');
+  //   }
+  // }
+
+
+ 
+
+
 
 
   

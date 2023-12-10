@@ -8,7 +8,7 @@
                         <form #formData="ngForm" (ngSubmit)="addAdmin(formData)">
                             <div class="form-group">
                                 <label>Admin Name</label><input type="text" class="form-control" #adminname="ngModel"
-                                    name="adminName" required ngModel>
+                                    name="adminName" required ngModel placeholder="give admin username">
                                 <span style="color: red;" *ngIf="adminname.touched && adminname.invalid">Give Proper
                                     Name.</span>
                             </div>
@@ -16,7 +16,7 @@
 
                             <div class="form-group">
                                 <label>Admin Password</label><input type="password" class="form-control"
-                                    #adminPassword="ngModel" name="adminPassword" required ngModel>
+                                    #adminPassword="ngModel" name="adminPassword" required ngModel placeholder="Ex:Xyzwa@9684">
                                 <span style="color: red;" *ngIf="adminPassword.touched && adminname.invalid">Admin
                                     Password Must contain at least one capital letter,one special symbol and numbers and
                                     some lowercase and length should be at least 8</span>

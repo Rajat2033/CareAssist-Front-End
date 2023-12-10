@@ -66,7 +66,7 @@
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="dob">Date of Birth</label>
                                         <input type="date" id="dob" class="form-control " placeholder="Ex:dd--mm--yy"
-                                            formControlName="patientDOB"
+                                            formControlName="patientDOB" [max]="maxDate"
                                             [ngClass]="{'is-invalid':submitted && f['patientDOB'].errors}">
                                         <div *ngIf="submitted && f['patientDOB'].errors" class="invalid-feedback">
                                             <div *ngIf=" f['patientDOB'].errors['required']">Enter

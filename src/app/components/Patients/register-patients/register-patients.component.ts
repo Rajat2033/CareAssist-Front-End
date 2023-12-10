@@ -9,10 +9,15 @@ import { PatientsService } from 'src/app/services/PatientsService/patients.servi
   styleUrls: ['./register-patients.component.css']
 })
 export class RegisterPatientsComponent implements OnInit {
+ maxDate?:string;
   submitted = false;
   registerPatientFormsGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private patientService:PatientsService,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private patientService:PatientsService,private router:Router) { 
+
+    const today=new Date();
+    this.maxDate=today.toISOString().split('T')[0 ]
+  }
   ngOnInit(): void {
     this.registerPatientFormsGroup = this.formBuilder.group({
 

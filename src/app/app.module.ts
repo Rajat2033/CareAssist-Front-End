@@ -38,6 +38,7 @@ import { GetclaimPatientnameComponent } from './components/Patients/getclaim-pat
 import { GetinvoicePatientnameComponent } from './components/InvoiceDetails/getinvoice-patientname/getinvoice-patientname.component';
 import { GetinvoicepdfComponent } from './components/InvoiceDetails/getinvoicepdf/getinvoicepdf.component';
 import { AddadminComponent } from './components/Admin/addadmin/addadmin.component';
+import { GetplanbycompanynameComponent } from './components/InsurancePlans/getplanbycompanyname/getplanbycompanyname.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { AddadminComponent } from './components/Admin/addadmin/addadmin.componen
       GetclaimPatientnameComponent,
       GetinvoicePatientnameComponent,
       GetinvoicepdfComponent,
-      AddadminComponent
+      AddadminComponent,
+      GetplanbycompanynameComponent
 
   ],
   imports: [

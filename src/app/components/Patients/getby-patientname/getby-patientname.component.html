@@ -1,10 +1,23 @@
-
+<br>
+<br>
+<div class="title">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <span class="text"> &nbsp;<b>Search Patient By Name</b> </span>
+</div>
+<br>
 <form class="d-flex" #searchForm="ngForm" (ngSubmit)="searchPatients()">
-    <input class="form-control me-2" type="search" name="patientName" [(ngModel)]="searchQuery" placeholder="Search" aria-label="Search">
+    <input class="form-control me-2" type="search" name="patientName" [(ngModel)]="searchQuery"
+        placeholder="Give Patient Name you want to search" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>
-  </form>
-
-  <table id="zebra-h" class="table">
+</form>
+<br>
+<br>
+<div class="title">
+    <i class="fa fa-list" aria-hidden="true"></i>
+    <span class="text"> &nbsp;<b>Patient History</b> </span>
+</div>
+<br>
+<table id="zebra-h" class="table">
     <thead>
         <th>Sr No.</th>
         <th>Id</th>
@@ -15,7 +28,7 @@
         <th>Phone</th>
         <th>Address</th>
         <th>Disease</th>
-        
+
     </thead>
     <tr *ngFor="let patient of searchResults,index as i">
         <td>{{i+1}}</td>
@@ -29,7 +42,7 @@
         <td>{{patient.patientContact}}</td>
         <td>{{patient.patientAddress}}</td>
         <td>{{patient.patientDisease}}</td>
-       
+
 
     </tr>
 </table>

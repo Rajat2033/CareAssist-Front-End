@@ -5,31 +5,31 @@
 
         <div class="form-group">
             <label class="control-label">Plan Name</label><input type="text" class="form-control" #planName="ngModel"
-                name="planName" required ngModel>
+                name="planName" required ngModel placeholder="Give Name of Plan">
             <span style="color: red;" *ngIf="planName.touched && planName.invalid">Plan Name is Mandatory</span>
         </div>
         <div class="form-group">
             <label class="control-label">Plan Type</label><input type="text" class="form-control" #planType="ngModel"
-                name="planType" required ngModel>
+                name="planType" required ngModel placeholder="Give Type of Plan">
             <span style="color: red;" *ngIf="planType.touched && planType.invalid">Plan Type is Mandatory</span>
         </div>
 
         <div class="form-group">
             <label class="control-label">Plan Cover Amount</label><input type="number" class="form-control" #coverAmount="ngModel"
-                name="planCoverAmount" required ngModel>
+                name="planCoverAmount" required ngModel placeholder="Enter Cover Amount of plan">
             <span style="color: red;" *ngIf="coverAmount.touched && coverAmount.invalid">Plan Cover Amount should be between < 150000 to  >750000</span>
         </div>
 
         <div class="form-group">
             <label class="control-label">Plan Emi</label><input type="number" class="form-control" #emi="ngModel"
-                name="planEmi" required ngModel>
+                name="planEmi" required ngModel placeholder="Emi amount of plan">
             <span style="color: red;" *ngIf="emi.touched && emi.invalid">Plan Emi Value should be < 400 and >3000</span>
         </div>
 
       
         <div class="form-group">
             <label>Plan Details</label><input type="text" class="form-control" #planDetails="ngModel"
-                name="planDetails" required ngModel>
+                name="planDetails" required ngModel placeholder="Enter Details about plan ">
             <span style="color: red;" *ngIf="planDetails.touched && planDetails.invalid">Plan Details for clarification of customers</span>
         </div>
 

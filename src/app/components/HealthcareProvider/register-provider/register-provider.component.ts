@@ -11,8 +11,11 @@ import { HealthcareProviderService } from 'src/app/services/HealthcareProviderSe
 })
 export class RegisterProviderComponent   {
 
- 
-  constructor(private formBuilder: FormBuilder, private providerService: HealthcareProviderService,private router:Router) { }
+
+  constructor(private formBuilder: FormBuilder, private providerService: HealthcareProviderService,private router:Router) { 
+
+  
+  }
 
 
 

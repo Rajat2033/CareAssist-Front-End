@@ -22,6 +22,8 @@ export class LoginProviderComponent {
       this.jwtProviderService.login(username, password).subscribe(
         (token) => {
         
+
+          sessionStorage.setItem('providerName',username);
           console.log(token);
           this.jwtProviderService.setToken(token);
           this.router.navigate(['/provider/dashboard'])

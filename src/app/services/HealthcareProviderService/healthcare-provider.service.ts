@@ -10,6 +10,7 @@ import { JwtAdminService } from '../AdminService/jwt-admin.service';
 })
 export class HealthcareProviderService {
 
+  providerName!:string;
   providerURL: string = 'http://localhost:8080/api/v1/provider';
 
   constructor(private http: HttpClient,private jwtProvider:JwtProviderService,private jwtAdmin:JwtAdminService) { }
@@ -67,5 +68,15 @@ export class HealthcareProviderService {
       else{
         return new Observable<HealthcareProvider>;
       }
+  }
+
+  setProviderName(name:string)
+  {
+    this.providerName=name;
+  }
+
+  getProviderName()
+  {
+    return this.providerName;
   }
 }

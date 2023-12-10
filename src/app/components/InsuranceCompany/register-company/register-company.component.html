@@ -75,7 +75,7 @@
                                     <div class="form-outline md-4">
                                         <label class="form-label" for="year">Established Year</label>
                                         <input type="date" id="year" class="form-control " formControlName="companyStartYears"
-                                            placeholder="Enter year"
+                                            placeholder="Enter year" [max]="maxDate"
                                             [ngClass]="{'is-invalid':submitted && f['companyStartYears'].errors}">
                                             <div *ngIf="submitted && f['companyStartYears'].errors" class="invalid-feedback">
                                                 <div *ngIf=" f['companyStartYears'].errors['required']">Company Established Year is

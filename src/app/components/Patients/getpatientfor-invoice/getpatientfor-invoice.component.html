@@ -1,12 +1,14 @@
-<div class="dash-content">
-    <button class="btn-success" (click)="getAllPatientsData()">Display All The patients</button>
+<br>
+<br>
+
     <div class="activity">
         <div class="title">
-            <i class="uil uil-clock-three"></i>
-            <span class="text">All the Patients List</span>
+            <i class="fa-solid fa-list"></i>
+            <span class="text"> &nbsp; <b>All the Patients List</b></span>
         </div>
 
-        
+        <br>
+        <br>
 
         <table id="zebra-h" class="table">
             <thead>
@@ -33,12 +35,13 @@
                 <td>{{patient.patientContact}}</td>
                 <td>{{patient.patientAddress}}</td>
                 <td>{{patient.patientDisease}}</td>
-                <td><button class="btn btn-danger" style="color: black;" (click)="generateInvoice(patient.patientId)">Generate Invoice</button></td>
-               
-                
+                <td><button class="btn btn-danger" style="background-color:green;color: white;"
+                        (click)="generateInvoice(patient.patientId)">Generate Invoice</button></td>
+
+
 
             </tr>
         </table>
     </div>
-</div>
+
 <div class="space"></div>

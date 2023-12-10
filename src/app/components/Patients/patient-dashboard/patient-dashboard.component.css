@@ -1,5 +1,6 @@
 body {
-    background-color: #fbfbfb;
+   background-image: url(../../../../assets/patieentdashback.jpg);
+   background-size: 120%;
 }
 
 @media (min-width: 991.98px) {
@@ -95,3 +96,21 @@ header .logo {
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+#sidebarMenu
+{
+    background-color: #3366cc;
+}
+.collapse {
+    background-color: #3366cc;
+  }
+#sidebarMenu .list-group-item:hover {
+    background-color: #007BFF; /* Blue color on hover */
+    color: white; /* Text color on hover */
+  }
+  .element-with-background {
+    background-image: url(../../../../assets/companyheadpic.jpg);
+    background-size: contain; 
+    height: 60px; 
+    width: 1260px; 
+  }
+  
